@@ -1,1026 +1,1789 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" class="lang-en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIDGO — Interactive Brand Experience</title>
-  <meta name="description" content="An award-winning interactive brand experience for MIDGO. Digital Dermatology Education from Saudi Arabia.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MIDGO — Visual Brand Guidelines and Design Book</title>
+  <link rel="stylesheet" href="style.css">
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/sections.css">
+  <!-- Browser Theme & Branding -->
+  <meta name="theme-color" content="#4a3548">
+  <meta name="msapplication-navbutton-color" content="#4a3548">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/logo-horizontal.png">
+  <link rel="apple-touch-icon" href="assets/logo-horizontal.png">
+
+  <!-- Social Sharing Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MIDGO — Visual Brand Guidelines and Design Book">
+  <meta property="og:description" content="Official Visual Brand Guidelines and Digital Design Specifications for MIDGO Digital Dermatology Education.">
 </head>
 <body>
 
-  <!-- Swiss Grid Visualizer Overlay -->
-  <div class="grid-overlay">
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-    <div class="grid-overlay-col"></div>
-  </div>
+<div class="app-container">
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="#hero" class="logo-link">
-        <img src="assets/logo-horizontal.png" alt="MIDGO Logo" class="logo-img-h">
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link" data-translate-key="nav-about">About</a></li>
-          <li><a href="#positioning" class="nav-link" data-translate-key="nav-positioning">Positioning</a></li>
-          <li><a href="#personality" class="nav-link" data-translate-key="nav-personality">Personality</a></li>
-          <li><a href="#design-system" class="nav-link" data-translate-key="nav-design-system">Design System</a></li>
-          <li><a href="#ui-components" class="nav-link" data-translate-key="nav-ui">Components</a></li>
-          <li><a href="#future-products" class="nav-link" data-translate-key="nav-products">Future Products</a></li>
-        </ul>
-      </nav>
-
-      <div class="lang-switcher">
-        <button type="button" id="btn-lang-en" class="lang-btn active">EN</button>
-        <button type="button" id="btn-lang-ar" class="lang-btn">عربي</button>
-      </div>
+  <!-- Sidebar Navigation Index -->
+  <aside class="sidebar">
+    <div class="brand-meta">
+      <button type="button" id="btn-menu-toggle" class="btn-menu" aria-label="Toggle Menu / القائمة">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <img src="assets/logo-horizontal.png" alt="MIDGO" class="logo-img-h">
+      <span class="brand-title-text en-only">MIDGO BOOK</span>
+      <span class="brand-title-text ar-only">كتاب ميدجو</span>
     </div>
-  </header>
 
-  <main>
-    <!-- SECTION 01: Hero -->
-    <section id="hero" class="hero-section">
-      <div class="hero-bg-lines"></div>
-      <div class="container hero-content">
-        <div class="hero-logo-container">
-          <img src="assets/logo-stacked.png" alt="MIDGO Logo" class="hero-logo-img">
+    <ul class="nav-links">
+      <li class="nav-item active">
+        <button type="button"><span class="slide-num">01</span> <span class="en-only">Cover</span><span class="ar-only">الغلاف</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">02</span> <span class="en-only">About MIDGO</span><span class="ar-only">عن ميدجو</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">03</span> <span class="en-only">Audience &amp; Pain Points</span><span class="ar-only">الجمهور والمشاكل</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">04</span> <span class="en-only">Brand Positioning</span><span class="ar-only">التموضع والوعد</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">05</span> <span class="en-only">Primary Logo</span><span class="ar-only">الشعار الرئيسي</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">06</span> <span class="en-only">Logo Meaning</span><span class="ar-only">رموز الشعار</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">07</span> <span class="en-only">Color System</span><span class="ar-only">نظام الألوان</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">08</span> <span class="en-only">Typography Specs</span><span class="ar-only">تدرج الخطوط</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">09</span> <span class="en-only">Grid &amp; Spacing</span><span class="ar-only">الشبكة والمسافات</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">10</span> <span class="en-only">UI Components</span><span class="ar-only">عناصر الواجهة</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">11</span> <span class="en-only">Iconography Style</span><span class="ar-only">الأيقونات الموحدة</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">12</span> <span class="en-only">Photography Dir</span><span class="ar-only">توجيه التصوير</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">13</span> <span class="en-only">Illustration Style</span><span class="ar-only">الرسوم التوضيحية</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">14</span> <span class="en-only">Social Media</span><span class="ar-only">قنوات التواصل</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">15</span> <span class="en-only">E-book Cover</span><span class="ar-only">تصميم الكتب الرقمية</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">16</span> <span class="en-only">Mobile App UI</span><span class="ar-only">واجهات التطبيق</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">17</span> <span class="en-only">Packaging Specs</span><span class="ar-only">تصميم المنتجات</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">18</span> <span class="en-only">Tone of Voice</span><span class="ar-only">نبرة الصوت</span></button>
+      </li>
+      <li class="nav-item">
+        <button type="button"><span class="slide-num">19</span> <span class="en-only">Final Showcase</span><span class="ar-only">معرض الهوية البصرية</span></button>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="controls-row">
+        <div class="lang-switch-pill" role="group" aria-label="Language Selector / اختيار اللغة">
+          <button type="button" class="lang-btn active" id="btn-lang-en" aria-label="Switch to English">EN</button>
+          <button type="button" class="lang-btn" id="btn-lang-ar" aria-label="التحويل للغة العربية">عربي</button>
         </div>
-        <h1 class="hero-tagline" data-translate-key="hero-tagline">Your First Destination to Understand Your Skin.</h1>
-        <div class="hero-meta" data-translate-key="hero-sub">Saudi Arabia • Digital Dermatology Education</div>
-
-        <a href="#about" class="hero-scroll-indicator">
-          <span class="scroll-text">Explore Brand</span>
-          <div class="scroll-line"></div>
-        </a>
+        <button type="button" class="btn-icon" id="btn-fullscreen" aria-label="Toggle Fullscreen" title="Fullscreen mode">⛶</button>
       </div>
-    </section>
+      <button type="button" class="btn-print" id="btnPrint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span class="en-only">Print / Export PDF</span>
+        <span class="ar-only">طباعة / تصدير PDF</span>
+      </button>
+    </div>
+  </aside>
 
-    <!-- SECTION 02: About MIDGO -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="about-num">02</span>
-          <h2 class="section-title" data-translate-key="about-title">Education First. Treatment Second.</h2>
+  <!-- Viewport -->
+  <main class="viewport">
+    <div class="book-container">
+
+      <!-- PAGE 01: Cover -->
+      <section class="brand-page theme-dark active" id="page-01">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <div class="cover-background">
+          <!-- Pattern -->
+        </div>
+        <div class="cover-content">
+          <div class="cover-header">
+            <img src="assets/logo-horizontal.png" alt="MIDGO Logo" class="logo-img logo-img-dark">
+            <div class="cover-date">V2.0 — PRINT COMPLIANT</div>
+          </div>
+
+          <div class="cover-title-area">
+            <div class="en-only">
+              <h1 class="cover-title">MIDGO — <span>GUIDELINES</span></h1>
+              <p class="cover-subtitle">Visual Brand Guidelines and Digital Identity Specifications Book.</p>
+            </div>
+            <div class="ar-only" dir="rtl">
+              <h1 class="cover-title">ميدجو — <span>الهوية البصرية</span></h1>
+              <p class="cover-subtitle">دليل الهوية البصرية ونظم ومواصفات التصميم المتكاملة.</p>
+            </div>
+          </div>
+
+          <div class="cover-footer">
+            <div class="en-only">CONFIDENTIAL &amp; PROPRIETARY — ALL RIGHTS RESERVED</div>
+            <div class="ar-only" dir="rtl">سري وخاضع لحقوق الملكية — جميع الحقوق محفوظة لشركة ميدجو</div>
+            <div>MIDGO / 2026</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 02: About MIDGO & Mission -->
+      <section class="brand-page theme-dark" id="page-02">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>01.0 / Brand Foundation / Mission</span>
+          </div>
+          <div class="page-content-area">
+            <blockquote class="essence-quote">
+              "We empower individuals to understand their skin before starting any treatment. We do not sell treatments; we build <span>clinical understanding</span>. Education first. Treatment second."
+            </blockquote>
+            <div class="grid-12">
+              <div class="col-4 essence-card">
+                <h3>Evidence-Based</h3>
+                <p>Grounded in absolute clinical dermatological science. Every insight, guideline, and advice is verified by board-certified dermatologists.</p>
+              </div>
+              <div class="col-4 essence-card">
+                <h3>Empathetic</h3>
+                <p>A trusted, calm partner who listens without judgment. Validating skin struggles, showing real skin textures, and prioritizing barrier repair.</p>
+              </div>
+              <div class="col-4 essence-card">
+                <h3>Culturally Nuanced</h3>
+                <p>Calibrated specifically for the regional hot climate, UV index, and regional skin needs in Saudi Arabia, translating science into local context.</p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">02</span>
+          </div>
         </div>
 
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <p class="about-quote" data-translate-key="about-desc">
-              MIDGO is a digital dermatology education platform founded by a dermatologist. We empower people to understand their skin before starting any treatment. We do not sell treatments; we build understanding.
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>01.0 / أساس العلامة التجارية / الرؤية والرسالة</span>
+          </div>
+          <div class="page-content-area">
+            <blockquote class="essence-quote">
+              "نحن نمكّن الأفراد من فهم طبيعة بشرتهم واحتياجاتها قبل البدء في أي علاج. لا نبيع الأدوية؛ بل نبني <span>المعرفة الجلدية السريرية</span>. التعليم أولاً، والعلاج ثانياً."
+            </blockquote>
+            <div class="grid-12">
+              <div class="col-4 essence-card">
+                <h3>مبني على الأدلة</h3>
+                <p>مستند إلى دراسات علمية وخبرات طبية دقيقة. كل دليل وإرشاد يمر عبر مراجعة دقيقة من قِبل أطباء جلدية معتمدين.</p>
+              </div>
+              <div class="col-4 essence-card">
+                <h3>متعاطف وإنساني</h3>
+                <p>شريك هادئ وموثوق يستمع بصدق دون إطلاق أحكام. ندعم رحلتك ونشجع على تقبل الملمس الطبيعي للبشرة والتركيز على ترميم الحاجز الطبيعي.</p>
+              </div>
+              <div class="col-4 essence-card">
+                <h3>ملائم لبيئتنا</h3>
+                <p>مهيأ ومصمم خصيصاً لمواجهة درجات الحرارة المرتفعة، ومستويات الأشعة فوق البنفسجية، وخصائص البشرة وسكان المملكة العربية السعودية.</p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">02</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 03: Audience & Pain Points -->
+      <section class="brand-page theme-light" id="page-03">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>01.1 / Brand Foundation / Audience &amp; Pain Points</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">Target Audience</h3>
+                <p class="fs-10-lh-16-mb-12">
+                  Skincare enthusiasts, wellness seekers, and individuals dealing with chronic skin conditions in Saudi Arabia. Mostly young women aged 16–50 who value clinical clarity.
+                </p>
+                <p class="fs-95-lh-16">
+                  They seek dermatologist-backed insight rather than influencer trends, desiring to make smart decisions before purchasing cosmetics or clinical treatments.
+                </p>
+              </div>
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">Audience Pain Points</h3>
+                <div class="essence-card card-pain-point-en">
+                  <h4 class="mb-4">Information Overload &amp; Misinformation</h4>
+                  <p>Overwhelmed by cosmetic influencers promoting unverified, complex routines that harm the skin barrier.</p>
+                </div>
+                <div class="essence-card card-pain-point-en">
+                  <h4 class="mb-4">Lack of Climate-Calibrated Advice</h4>
+                  <p>Dermatological resources calibrated for western environments, ignoring Saudi heat, UV index, and specific local skin issues.</p>
+                </div>
+                <div class="essence-card card-pain-point-last-en">
+                  <h4 class="mb-4">High Cost of Trial and Error</h4>
+                  <p>Spending high amounts on cosmetic products without diagnostic certainty, triggering recurring barrier flareups.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">03</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>01.1 / أساس الهوية / الجمهور ومشاكلهم</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">الجمهور المستهدف</h3>
+                <p class="fs-10-lh-16-mb-12">
+                  المهتمون بصحة ونضارة البشرة، والباحثون عن نمط حياة صحي، وكل من يواجه مشاكل جلدية مزمنة في المملكة العربية السعودية. الفئة الأكثر استهدافاً هي النساء الشابات والبالغات من عمر ١٦ إلى ٥٠ عاماً.
+                </p>
+                <p class="fs-95-lh-16">
+                  يبحثون عن توجيه طبي موثوق بعيداً عن الصيحات التجارية والمؤثرين، ويرغبون باتخاذ قرارات صحيحة لحماية بشرتهم.
+                </p>
+              </div>
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">نقاط الألم لدى الجمهور</h3>
+                <div class="essence-card card-pain-point-ar">
+                  <h4 class="mb-4">تشتت المعلومات والإشاعات التجارية</h4>
+                  <p>شائعات وإعلانات تسويقية لخطوات عناية معقدة وغير طبية تضر بحاجز البشرة الطبيعي.</p>
+                </div>
+                <div class="essence-card card-pain-point-ar">
+                  <h4 class="mb-4">غياب الإرشادات الملائمة للمناخ</h4>
+                  <p>أغلب المراجع مصممة للبيئات الغربية، متجاهلة درجات الحرارة المرتفعة ومستويات الأشعة فوق البنفسجية في المنطقة.</p>
+                </div>
+                <div class="essence-card card-pain-point-last-ar">
+                  <h4 class="mb-4">التكلفة الباهظة للتجارب العشوائية</h4>
+                  <p>شراء منتجات عشوائية وباهظة دون تشخيص طبي صحيح، مما يسبب استنزافاً مادياً وتلفاً لحاجز الجلد.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">03</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 04: Brand Positioning -->
+      <section class="brand-page theme-light" id="page-04">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>01.2 / Brand Foundation / Brand Positioning</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 essence-card card-pos-primary">
+                <h3 class="weight-medium color-plum mb-12">Brand Promise</h3>
+                <p class="fs-95-lh-16">
+                  We promise to transform complex dermatological pathology into digestible, evidence-based, and actionable digital knowledge. We provide the baseline understanding needed for healthy skin barriers, helping our community navigate skincare confidently and safely.
+                </p>
+              </div>
+              <div class="col-6 essence-card card-pos-accent">
+                <h3 class="weight-medium color-plum mb-12">Positioning Statement</h3>
+                <p class="fs-95-lh-16">
+                  "Your First Destination to Understand Your Skin." MIDGO positions itself not as a treatment clinic or a cosmetic product house, but as a critical pre-treatment educational destination. We fill the educational gap, preparing patients to understand their needs before they buy products or consult doctors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">04</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>01.2 / أساس الهوية / تموضع العلامة والوعد</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 essence-card card-pos-primary">
+                <h3 class="weight-medium color-plum mb-12">وعد العلامة التجارية</h3>
+                <p class="fs-95-lh-16">
+                  نعد بتبسيط أمراض الجلدية والمفاهيم الطبية المعقدة إلى معرفة رقمية سهلة الفهم وفعالة. نقدم الفهم التأسيسي اللازم لحماية وترميم حاجز البشرة، لمساعدة مجتمعنا على التعامل مع العناية ببشرتهم بثقة وأمان.
+                </p>
+              </div>
+              <div class="col-6 essence-card card-pos-accent">
+                <h3 class="weight-medium color-plum mb-12">بيان التموضع الاستراتيجي</h3>
+                <p class="fs-95-lh-16">
+                  "وجهتك الأولى لفهم طبيعة بشرتك." تتموضع ميدجو ليس كعيادة علاجية أو شركة مستحضرات تجميل، بل كوجهة تثقيفية حتمية تسبق أي علاج. نحن نسد الفجوة المعرفية ونوعّي المستخدمين باحتياجاتهم قبل التوجه للعيادات أو شراء المنتجات.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">04</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 05: Primary Logo -->
+      <section class="brand-page theme-light" id="page-05">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>02.0 / Visual Assets / Primary Logo Guidelines</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 card-logo-guideline">
+                <img src="assets/logo-horizontal.png" alt="MIDGO Logo Horizontal" class="logo-max-60">
+                <span class="font-mono color-charcoal mt-20-fs-7">HORIZONTAL LOCKUP (PREFERRED)</span>
+              </div>
+              <div class="col-6 card-logo-guideline">
+                <img src="assets/logo-stacked.png" alt="MIDGO Logo Stacked" class="logo-max-120">
+                <span class="font-mono color-charcoal mt-20-fs-7">STACKED LOCKUP (SECONDARY)</span>
+              </div>
+            </div>
+            <p class="p-24-margin-t-32">
+              The uploaded approved logo assets are final. Do not modify symbol curves, letter spacing, or proportions.
             </p>
           </div>
-
-          <div class="col-span-3 tablet-col-span-4 mobile-col-span-4">
-            <div class="card about-grid-card">
-              <span class="font-mono color-bronze mb-sm" data-translate-key="mission-title">Our Mission</span>
-              <p class="fs-sm" data-translate-key="mission-desc">To democratize dermatological education by providing evidence-based, culturally nuanced, and scientifically rigorous guides that empower individuals in Saudi Arabia and the wider region.</p>
-            </div>
-          </div>
-
-          <div class="col-span-3 tablet-col-span-4 mobile-col-span-4">
-            <div class="card about-grid-card">
-              <span class="font-mono color-bronze mb-sm" data-translate-key="vision-title">Our Vision</span>
-              <p class="fs-sm" data-translate-key="vision-desc">To become the leading digital authority on skin wellness in the Middle East, transforming the way people approach skincare through research and interactive educational tools.</p>
-            </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">05</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SECTION 03: Brand Positioning -->
-    <section id="positioning" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="pos-num">03</span>
-          <h2 class="section-title" data-translate-key="pos-title">Brand Positioning</h2>
-          <p class="section-subtitle" data-translate-key="pos-subtitle">Bridging the gap between medical expertise and daily skincare practices.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <!-- Target Audience & Promise -->
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col gap-lg">
-            <div class="card positioning-card">
-              <h3 class="weight-medium mb-md" data-translate-key="target-title">Target Audience</h3>
-              <p data-translate-key="target-desc">Skincare enthusiasts, wellness seekers, and patients struggling with chronic skin conditions in Saudi Arabia who are overwhelmed by online misinformation and desire clinical clarity.</p>
-            </div>
-
-            <div class="card positioning-card">
-              <h3 class="weight-medium mb-md" data-translate-key="promise-title">Brand Promise</h3>
-              <p data-translate-key="promise-desc">We promise evidence-based, scientifically accurate dermatology knowledge translated into clear, actionable, and culturally relevant digital learning experiences.</p>
-            </div>
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>02.0 / الأصول البصرية / إرشادات الشعار الرئيسي</span>
           </div>
-
-          <!-- Pain Points Accordion -->
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="flex flex-col gap-sm">
-              <span class="font-mono color-plum-light">AUDIENCE PAIN POINTS</span>
-
-              <div class="pain-point-item active">
-                <div class="pain-point-header">
-                  <h4 class="weight-medium fs-lg" data-translate-key="pain-1-title">Information Overload &amp; Misinformation</h4>
-                  <span class="pain-point-icon">+</span>
-                </div>
-                <div class="pain-point-content" data-translate-key="pain-1-desc">
-                  Users are overwhelmed by beauty influencers promoting complex, unverified 10-step routines that often irritate the skin barrier.
-                </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 card-logo-guideline">
+                <img src="assets/logo-horizontal.png" alt="MIDGO Logo Horizontal" class="logo-max-60">
+                <span class="font-mono color-charcoal mt-20-fs-7">الشعار الأفقي (الخيار المفضل)</span>
               </div>
-
-              <div class="pain-point-item">
-                <div class="pain-point-header">
-                  <h4 class="weight-medium fs-lg" data-translate-key="pain-2-title">Lack of Culturally Relevant Advice</h4>
-                  <span class="pain-point-icon">+</span>
-                </div>
-                <div class="pain-point-content" data-translate-key="pain-2-desc">
-                  Most dermatology literature is in English and calibrated for European/Western climates and skin types, ignoring regional heat, UV index, and specific local skin concerns.
-                </div>
+              <div class="col-6 card-logo-guideline">
+                <img src="assets/logo-stacked.png" alt="MIDGO Logo Stacked" class="logo-max-120">
+                <span class="font-mono color-charcoal mt-20-fs-7">الشعار الرأسي (الخيار الثانوي)</span>
               </div>
+            </div>
+            <p class="p-24-margin-t-32">
+              أصول شعار ميدجو المرفقة والمثبتة نهائية. يُمنع منعاً باتاً تعديل زوايا الرمز، تباعد الحروف، أو نسب التشكيل.
+            </p>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">05</span>
+          </div>
+        </div>
+      </section>
 
-              <div class="pain-point-item">
-                <div class="pain-point-header">
-                  <h4 class="weight-medium fs-lg" data-translate-key="pain-3-title">High Cost of Trial-and-Error</h4>
-                  <span class="pain-point-icon">+</span>
-                </div>
-                <div class="pain-point-content" data-translate-key="pain-3-desc">
-                  Buying high-end skincare products blindly without knowing one's true skin barrier type leads to empty wallets and damaged skin.
+      <!-- PAGE 06: Logo Meaning -->
+      <section class="brand-page theme-light" id="page-06">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>02.1 / Visual Assets / Symbology Breakdowns</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <img src="assets/logo-stacked.png" alt="MIDGO Symbol Breakdown" class="logo-max-220">
+              </div>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum mb-12">The Icon Path Architecture</h3>
+                <p class="fs-95-lh-16">
+                  The visual symbol consists of a flowing, continuous geometric path tracing the letter 'M' to represent the journey of skin health.
+                </p>
+                <div class="grid-12 gap-16">
+                  <div class="col-6">
+                    <h4 class="mb-4">1. The Guide &amp; Journey</h4>
+                    <p class="fs-95-lh-16">The continuous curve guides the user through the complex biology of skincare.</p>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="mb-4">2. Knowledge &amp; Trust</h4>
+                    <p class="fs-95-lh-16">Grounded clinical knowledge. The bronze starting dot represents MIDGO as the first destination.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: Brand Personality -->
-    <section id="personality" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="pers-num">04</span>
-          <h2 class="section-title" data-translate-key="pers-title">Brand Personality</h2>
-        </div>
-
-        <div id="section-04" class="grid staggered-reveal reveal-on-scroll">
-          <!-- Doctor (70%) -->
-          <div class="col-span-4 tablet-col-span-8 mobile-col-span-4">
-            <div class="card personality-card card-interactive">
-              <span class="personality-num">70%</span>
-              <div class="personality-header">
-                <h3 class="personality-title" data-translate-key="pers-doctor">Doctor (70%)</h3>
-                <div class="personality-bar-container">
-                  <div class="personality-bar" data-width="70%"></div>
-                </div>
-              </div>
-              <p class="fs-sm" data-translate-key="pers-doctor-desc">Authoritative, precise, scientific, and evidence-based. The foundation of MIDGO lies in medical expertise and clinical truth.</p>
-              <div class="flex gap-xs mt-md">
-                <span class="badge badge-plum">Clinical</span>
-                <span class="badge badge-plum">Scientific</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mentor (20%) -->
-          <div class="col-span-4 tablet-col-span-4 mobile-col-span-4">
-            <div class="card personality-card card-interactive">
-              <span class="personality-num">20%</span>
-              <div class="personality-header">
-                <h3 class="personality-title" data-translate-key="pers-mentor">Mentor (20%)</h3>
-                <div class="personality-bar-container">
-                  <div class="personality-bar" data-width="20%"></div>
-                </div>
-              </div>
-              <p class="fs-sm" data-translate-key="pers-mentor-desc">Guiding, encouraging, educational, and patient. Translating complex pathological concepts into clear, structured lessons.</p>
-              <div class="flex gap-xs mt-md">
-                <span class="badge badge-bronze">Guiding</span>
-                <span class="badge badge-bronze">Educational</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Friend (10%) -->
-          <div class="col-span-4 tablet-col-span-4 mobile-col-span-4">
-            <div class="card personality-card card-interactive">
-              <span class="personality-num">10%</span>
-              <div class="personality-header">
-                <h3 class="personality-title" data-translate-key="pers-friend">Friend (10%)</h3>
-                <div class="personality-bar-container">
-                  <div class="personality-bar" data-width="10%"></div>
-                </div>
-              </div>
-              <p class="fs-sm" data-translate-key="pers-friend-desc">Empathetic, approachable, calm, and supportive. A trusted partner who listens without judgment and validates personal skin struggles.</p>
-              <div class="flex gap-xs mt-md">
-                <span class="badge badge-olive">Empathetic</span>
-                <span class="badge badge-olive">Calm</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: Logo Meaning -->
-    <section id="logo-meaning" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="logo-num">05</span>
-          <h2 class="section-title" data-translate-key="logo-title">Logo &amp; Symbology</h2>
-          <p class="section-subtitle" data-translate-key="logo-subtitle">The visual anchor of our identity representing a guided skin journey.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="logo-meaning-showcase">
-              <img src="assets/logo-stacked.png" alt="MIDGO Logo Layout" class="logo-showcase-img">
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col justify-center gap-lg">
-            <div>
-              <h3 class="weight-medium mb-sm" data-translate-key="logo-concept-title">The Flow of Knowledge</h3>
-              <p class="fs-sm" data-translate-key="logo-concept-desc">The MIDGO logo mark is a continuous line tracing the letter 'M', representing a guided journey. The copper dot signifies the starting point: MIDGO is the "first destination" of skin understanding. The soft rounded geometry reflects biological structures.</p>
-            </div>
-
-            <div class="logo-meaning-grid grid gap-lg">
-              <div class="col-span-3 mobile-col-span-2 logo-point-card">
-                <h4 class="weight-semibold" data-translate-key="logo-guide">The Guide</h4>
-                <p class="specimen-body-sm" data-translate-key="logo-guide-desc">A path that guides you through skincare complexity.</p>
-              </div>
-              <div class="col-span-3 mobile-col-span-2 logo-point-card">
-                <h4 class="weight-semibold" data-translate-key="logo-journey">The Journey</h4>
-                <p class="specimen-body-sm" data-translate-key="logo-journey-desc">A continuous process of healing and learning.</p>
-              </div>
-              <div class="col-span-3 mobile-col-span-2 logo-point-card">
-                <h4 class="weight-semibold" data-translate-key="logo-knowledge">Knowledge</h4>
-                <p class="specimen-body-sm" data-translate-key="logo-knowledge-desc">Grounded in absolute clinical dermatological science.</p>
-              </div>
-              <div class="col-span-3 mobile-col-span-2 logo-point-card">
-                <h4 class="weight-semibold" data-translate-key="logo-trust">Trust</h4>
-                <p class="specimen-body-sm" data-translate-key="logo-trust-desc">Built by medical professionals, for the community.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: Color System -->
-    <section id="design-system" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="color-num">06</span>
-          <h2 class="section-title" data-translate-key="color-title">Color Palette</h2>
-          <p class="section-subtitle" data-translate-key="color-subtitle">A sophisticated palette designed to feel like a luxury medical brand, avoiding pharmacy blues and greens.</p>
-        </div>
-
-        <div class="grid staggered-reveal mb-3xl">
-          <!-- Deep Plum -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#4A3548">
-              <div class="color-swatch-preview swatch-plum"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Deep Plum</h3>
-                <span class="color-swatch-hex">#4A3548</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Warm Bronze -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#C9A88C">
-              <div class="color-swatch-preview swatch-bronze"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Warm Bronze</h3>
-                <span class="color-swatch-hex">#C9A88C</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Warm Stone -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#E8E0D8">
-              <div class="color-swatch-preview swatch-stone"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Warm Stone</h3>
-                <span class="color-swatch-hex">#E8E0D8</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Warm White -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#FAF7F4">
-              <div class="color-swatch-preview swatch-cream"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Warm White</h3>
-                <span class="color-swatch-hex">#FAF7F4</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Deep Charcoal -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#2C2428">
-              <div class="color-swatch-preview swatch-charcoal"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Charcoal</h3>
-                <span class="color-swatch-hex">#2C2428</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Soft Olive -->
-          <div class="col-span-2 tablet-col-span-4 mobile-col-span-2">
-            <div class="color-swatch-card" data-hex="#8A9A7B">
-              <div class="color-swatch-preview swatch-olive"></div>
-              <div class="color-swatch-info">
-                <h3 class="color-swatch-name">Soft Olive</h3>
-                <span class="color-swatch-hex">#8A9A7B</span>
-              </div>
-            </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">06</span>
           </div>
         </div>
 
-        <!-- Contrast & Accessibility -->
-        <div class="grid staggered-reveal items-center">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <h4 class="weight-medium mb-md">Accessibility Contrast Checks</h4>
-            <div class="flex flex-col gap-sm">
-              <div class="color-contrast-row contrast-row-cream">
-                <span class="font-mono">Plum on Warm White</span>
-                <span class="font-mono ml-auto">Ratio 6.2:1 (Pass AAA)</span>
-              </div>
-              <div class="color-contrast-row contrast-row-plum">
-                <span class="font-mono color-cream">Warm White on Plum</span>
-                <span class="font-mono ml-auto color-cream">Ratio 6.2:1 (Pass AAA)</span>
-              </div>
-              <div class="color-contrast-row contrast-row-white">
-                <span class="font-mono">Charcoal on White</span>
-                <span class="font-mono ml-auto">Ratio 12.8:1 (Pass AAA)</span>
-              </div>
-            </div>
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>02.1 / الأصول البصرية / تحليل دلالات الشعار</span>
           </div>
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <p class="fs-sm color-plum-light">Our color system represents clinical precision paired with luxury calm. We deliberately avoid harsh medical blues and pharmacy greens. Instead, we draw inspiration from nature: stone, natural clay, deep plum, and soft foliage olives. The contrast ratio allows reading medical text effortlessly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 07: Typography -->
-    <section id="typography" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="type-num">07</span>
-          <h2 class="section-title" data-translate-key="type-title">Typography System</h2>
-          <p class="section-subtitle" data-translate-key="type-subtitle">Elegant serif for editorial hierarchy matched with structured sans-serif for clear readability.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="type-specimen">
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Display L</span>
-                <h1 class="specimen-display">Dermatology.</h1>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <img src="assets/logo-stacked.png" alt="MIDGO Symbol Breakdown" class="logo-max-220">
               </div>
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Heading M</span>
-                <h2 class="fs-3xl">Clinical Education.</h2>
-              </div>
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Body Regular</span>
-                <p class="fs-base font-sans">Your first destination to understand skin health.</p>
-              </div>
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Mono Meta</span>
-                <span class="font-mono">SAUDI ARABIA • RETAIL PACKAGING</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="type-specimen dir-rtl">
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Display L (AR)</span>
-                <h1 class="fs-4xl weight-regular font-serif">طب الجلدية.</h1>
-              </div>
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Heading M (AR)</span>
-                <h2 class="fs-2xl font-serif">التعليم الطبي السريري.</h2>
-              </div>
-              <div class="type-specimen-row">
-                <span class="type-specimen-label">Body (AR)</span>
-                <p class="fs-base font-sans">وجهتك الأولى لفهم طبيعة البشرة وصحتها.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 08: Spacing System -->
-    <section id="spacing" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="space-num">08</span>
-          <h2 class="section-title" data-translate-key="space-title">Spacing Grid</h2>
-          <p class="section-subtitle" data-translate-key="space-subtitle">A strict layout system built around the 8pt grid, ensuring consistency across all viewports.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 spacing-blocks">
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">8px (xs)</span>
-              <div class="spacing-block-visual w-8"></div>
-            </div>
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">16px (md)</span>
-              <div class="spacing-block-visual w-16"></div>
-            </div>
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">24px (lg)</span>
-              <div class="spacing-block-visual w-24"></div>
-            </div>
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">32px (xl)</span>
-              <div class="spacing-block-visual w-32"></div>
-            </div>
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">48px (2xl)</span>
-              <div class="spacing-block-visual w-48"></div>
-            </div>
-            <div class="spacing-block-item">
-              <span class="font-mono w-80">64px (3xl)</span>
-              <div class="spacing-block-visual w-64"></div>
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col justify-center">
-            <p class="fs-sm color-plum-light mb-md">We employ the 8pt grid system to lay out all components, sizes, margins, and structural paddings. By keeping spacing clean and calculated, we maintain an Apple-like whitespace premium aesthetic.</p>
-            <div class="flex gap-sm">
-              <div class="card spacing-card">
-                <span class="font-mono color-bronze">MOBILE</span>
-                <span class="fs-sm weight-medium">4 Columns</span>
-              </div>
-              <div class="card spacing-card">
-                <span class="font-mono color-bronze">TABLET</span>
-                <span class="fs-sm weight-medium">8 Columns</span>
-              </div>
-              <div class="card spacing-card">
-                <span class="font-mono color-bronze">DESKTOP</span>
-                <span class="fs-sm weight-medium">12 Columns</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 09: UI Components -->
-    <section id="ui-components" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="ui-num">09</span>
-          <h2 class="section-title" data-translate-key="ui-title">UI Component Library</h2>
-          <p class="section-subtitle" data-translate-key="ui-subtitle">Production-ready responsive components designed to align with MIDGO's minimal brand layout.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <!-- Button Showcase -->
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="card h-full gap-lg">
-              <h3 class="weight-medium fs-lg border-bottom pb-sm">Interactive Buttons</h3>
-              <div class="flex flex-wrap gap-md">
-                <button type="button" class="btn btn-primary">Primary Button</button>
-                <button type="button" class="btn btn-secondary">Secondary Button</button>
-                <button type="button" class="btn btn-accent">Accent Button</button>
-                <button type="button" class="btn btn-text">Text Button</button>
-              </div>
-              <div class="flex flex-wrap gap-xs mt-sm">
-                <span class="badge badge-plum">Plum Badge</span>
-                <span class="badge badge-bronze">Bronze Chip</span>
-                <span class="badge badge-olive">Supporting</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Input & Forms -->
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="card h-full gap-lg">
-              <h3 class="weight-medium fs-lg border-bottom pb-sm">Form Elements</h3>
-              <form class="flex flex-col gap-md" onsubmit="event.preventDefault();">
-                <div class="form-group">
-                  <label class="label">Full Name</label>
-                  <input type="text" class="input" placeholder="e.g. Sarah Al-Saud">
-                </div>
-                <div class="form-group">
-                  <label class="label">Email Address</label>
-                  <input type="email" class="input" placeholder="e.g. sarah@domain.sa">
-                </div>
-                <button type="submit" class="btn btn-primary mt-sm">Subscribe to Updates</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10: Iconography -->
-    <section id="iconography" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="icon-num">10</span>
-          <h2 class="section-title" data-translate-key="icon-title">Iconography Direction</h2>
-          <p class="section-subtitle" data-translate-key="icon-subtitle">Consistent 1.5px stroke width with soft rounded corners and medical editorial precision.</p>
-        </div>
-
-        <div class="icon-grid staggered-reveal">
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
-              <path d="M12 8v4l3 3"/>
-            </svg>
-            <span class="font-mono">Routine</span>
-          </div>
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-            <span class="font-mono">Library</span>
-          </div>
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="m16.2 7.8-2.9 6.3-6.3 2.9 2.9-6.3 6.3-2.9z"/>
-            </svg>
-            <span class="font-mono">Guide</span>
-          </div>
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            <span class="font-mono">Trust</span>
-          </div>
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            <span class="font-mono">Care</span>
-          </div>
-          <div class="icon-card">
-            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24">
-              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <line x1="10" y1="9" x2="8" y2="9"/>
-            </svg>
-            <span class="font-mono">Evidence</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 11: Photography Direction -->
-    <section id="photography" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="photo-num">11</span>
-          <h2 class="section-title" data-translate-key="photo-title">Photography Direction</h2>
-          <p class="section-subtitle" data-translate-key="photo-subtitle">Warm natural light, authentic Saudi lifestyle, and real, healthy skin textures. Editorial and authentic.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="photo-mood-item aspect-square">
-              <img src="assets/photo-healthy-skin.png" alt="Healthy Skin Editorial Closeup" class="img-cover">
-              <div class="photo-caption">Close-up study: Skin health texture and soft natural morning light.</div>
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="photo-mood-item aspect-square">
-              <img src="assets/photo-saudi-lifestyle.png" alt="Modern Saudi Lifestyle Scene" class="img-cover">
-              <div class="photo-caption">Lifestyle aesthetic: Calm, modern minimalist atmosphere.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 12: Illustration Style -->
-    <section id="illustrations" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="illus-num">12</span>
-          <h2 class="section-title" data-translate-key="illus-title">Illustration Style</h2>
-          <p class="section-subtitle" data-translate-key="illus-subtitle">Minimal line art that visualizes biological and anatomical structures with clinical elegance.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex justify-center items-center">
-            <!-- Custom Cell Structure Line Art SVG -->
-            <svg class="illus-svg-wrapper" width="280" height="240" viewBox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Skin layer grid -->
-              <line x1="20" y1="200" x2="260" y2="200" stroke="var(--plum)" stroke-width="1" stroke-dasharray="4 4" />
-              <line x1="20" y1="140" x2="260" y2="140" stroke="var(--plum)" stroke-width="1.5" />
-              <line x1="20" y1="80" x2="260" y2="80" stroke="var(--plum)" stroke-width="1" stroke-dasharray="4 4" />
-
-              <!-- Cellular structure loops -->
-              <path d="M40 80 C 40 50, 70 50, 70 80 C 70 110, 100 110, 100 80 C 100 50, 130 50, 130 80 C 130 110, 160 110, 160 80 C 160 50, 190 50, 190 80 C 190 110, 220 110, 220 80 C 220 50, 250 50, 250 80" stroke="var(--bronze)" stroke-width="2" stroke-linecap="round" />
-
-              <!-- Dermal cells (Epidermis visualizer) -->
-              <circle cx="55" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="85" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="115" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="145" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="175" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="205" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-              <circle cx="235" cy="110" r="4" fill="var(--plum)" opacity="0.6"/>
-
-              <circle cx="70" cy="165" r="8" stroke="var(--plum)" stroke-width="1.5" />
-              <circle cx="140" cy="165" r="8" stroke="var(--plum)" stroke-width="1.5" />
-              <circle cx="210" cy="165" r="8" stroke="var(--plum)" stroke-width="1.5" />
-
-              <!-- Core dots -->
-              <circle cx="70" cy="165" r="2.5" fill="var(--bronze)"/>
-              <circle cx="140" cy="165" r="2.5" fill="var(--bronze)"/>
-              <circle cx="210" cy="165" r="2.5" fill="var(--bronze)"/>
-            </svg>
-          </div>
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col justify-center">
-            <h4 class="weight-semibold mb-sm">Anatomical Line Work</h4>
-            <p class="fs-sm color-plum-light mb-md">Illustrations are drawn using single-weight lines (1.5px) matching the iconography. They describe cellular structures, tissue layers, and biological mechanisms in a simplified, elegant manner without unnecessary decoration.</p>
-            <div class="flex gap-xs">
-              <span class="badge badge-plum">1.5px stroke</span>
-              <span class="badge badge-bronze">Geometric simplicity</span>
-              <span class="badge badge-olive">Medical editorial</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 13: Social Media System -->
-    <section id="social-media" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="social-num">13</span>
-          <h2 class="section-title" data-translate-key="social-title">Social Media System</h2>
-          <p class="section-subtitle" data-translate-key="social-subtitle">Instagram templates showing high-end educational carousels, stories, and post grids.</p>
-        </div>
-
-        <div class="social-preview-grid staggered-reveal">
-          <!-- Post 1 -->
-          <div class="instagram-post">
-            <div class="instagram-header">
-              <div class="instagram-avatar instagram-avatar-wrapper">
-                <img src="assets/logo-stacked.png" alt="Logo avatar" class="instagram-avatar-logo">
-              </div>
-              <span class="instagram-username">midgo.education</span>
-            </div>
-            <div class="instagram-image">
-              <div class="instagram-overlay-text">
-                <span class="font-mono instagram-header-tag">CHAPTER 01: BARRIER HEALTH</span>
-                <h3 class="instagram-title-post1">Understanding your skin barrier types.</h3>
-                <span class="font-mono instagram-swipe-post1">Swipe for clinical guide →</span>
-              </div>
-            </div>
-            <div class="instagram-footer">
-              <div class="instagram-actions">
-                <button type="button" class="instagram-action-btn">♥</button>
-                <button type="button" class="instagram-action-btn">💬</button>
-                <button type="button" class="instagram-action-btn">➔</button>
-              </div>
-              <p class="instagram-caption"><strong>midgo.education</strong> Before starting treatment, understand the anatomy. Skin health is clinical education first.</p>
-            </div>
-          </div>
-
-          <!-- Post 2 -->
-          <div class="instagram-post">
-            <div class="instagram-header">
-              <div class="instagram-avatar instagram-avatar-wrapper">
-                <img src="assets/logo-stacked.png" alt="Logo avatar" class="instagram-avatar-logo">
-              </div>
-              <span class="instagram-username">midgo.education</span>
-            </div>
-            <div class="instagram-image instagram-image-bg">
-              <img src="assets/photo-healthy-skin.png" alt="Skin closeup" class="instagram-image-img">
-              <div class="instagram-overlay-text instagram-caption-box">
-                <h3 class="instagram-caption-title">Evidence-based dermatological education founded by specialists.</h3>
-              </div>
-            </div>
-            <div class="instagram-footer">
-              <div class="instagram-actions">
-                <button type="button" class="instagram-action-btn">♥</button>
-                <button type="button" class="instagram-action-btn">💬</button>
-                <button type="button" class="instagram-action-btn">➔</button>
-              </div>
-              <p class="instagram-caption"><strong>midgo.education</strong> Natural textures, real clinical findings. No filters, just dermatology. #DermatologySaudi</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 14: E-book Design System -->
-    <section id="ebook" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="ebook-num">14</span>
-          <h2 class="section-title" data-translate-key="ebook-title">E-book Design System</h2>
-          <p class="section-subtitle" data-translate-key="ebook-subtitle">A standardized editorial layout for digital guides, scaling perfectly across Arabic &amp; English.</p>
-        </div>
-
-        <div class="grid staggered-reveal items-center">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex justify-center">
-            <div class="ebook-cover">
-              <img src="assets/ebook-cover.png" alt="E-Book Cover Design" class="img-cover">
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col gap-md">
-            <h3 class="weight-medium">Standardized Cover Architecture</h3>
-            <p class="fs-sm color-plum-light">Our e-books are our core educational product. Cover layouts employ a strict grid. The top-left corner places the MIDGO branding tag, the center holds the academic textbook title, and the bottom features publication notes, matching Saudi medical licensing guidelines.</p>
-            <div class="flex gap-xs">
-              <span class="badge badge-plum">A4 Standard Ratio</span>
-              <span class="badge badge-bronze">Grid structured</span>
-              <span class="badge badge-olive">Bilingual layout</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 15: Landing Page Mockup -->
-    <section id="landing-page" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="landing-num">15</span>
-          <h2 class="section-title" data-translate-key="landing-title">Landing Page Mockup</h2>
-          <p class="section-subtitle" data-translate-key="landing-subtitle">How the MIDGO landing page adapts across desktop, tablet, and mobile browsers.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-12">
-            <div class="device-safari">
-              <div class="safari-header">
-                <div class="safari-dots">
-                  <div class="safari-dot"></div>
-                  <div class="safari-dot"></div>
-                  <div class="safari-dot"></div>
-                </div>
-                <div class="safari-address">midgo.education</div>
-              </div>
-              <div class="safari-content safari-screen">
-                <div class="safari-screen-content">
-                  <img src="assets/logo-stacked.png" alt="Logo" class="logo-img-stacked-md">
-                  <h3 class="fs-2xl color-plum">Learn to read your skin.</h3>
-                  <p class="fs-sm color-plum-light mb-lg">Scientific dermatological guidelines prepared by board-certified doctors.</p>
-                  <button type="button" class="btn btn-primary">Explore Digital Library</button>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum mb-12">بنية وهندسة الرمز البصري</h3>
+                <p class="fs-95-lh-16">
+                  يتكون الرمز البصري من خط هندسي مرن ومستمر يرسم حرف الـ M، مرمزاً لرحلة الفهم والوعي بالبشرة.
+                </p>
+                <div class="grid-12 gap-16">
+                  <div class="col-6">
+                    <h4 class="mb-4">١. المسار والرحلة</h4>
+                    <p class="fs-95-lh-16">منحنيات ناعمة متصلة ترشدك وتدعمك خلال تعقيدات طب وصحة البشرة.</p>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="mb-4">٢. المعرفة والثقة السريرية</h4>
+                    <p class="fs-95-lh-16">تمثل النقطة البرونزية الدافئة نقطة انطلاق الوعي، جاعلة ميدجو محطتك ووجهتك الأولى.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">06</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SECTION 16: Mobile App UI -->
-    <section id="mobile-app" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="app-num">16</span>
-          <h2 class="section-title" data-translate-key="app-title">Mobile App UI</h2>
-          <p class="section-subtitle" data-translate-key="app-subtitle">Five primary app screens demonstrating daily skincare routine tracking, library, guides, and profiles.</p>
+      <!-- PAGE 07: Color Palette -->
+      <section class="brand-page theme-light" id="page-07">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>02.2 / Visual System / Color Specifications</span>
+          </div>
+          <div class="page-content-area">
+            <div class="colors-grid">
+              <div class="color-swatch swatch-plum-spec">
+                <div class="swatch-title">Deep Plum</div>
+                <div>
+                  <div class="swatch-hex-accessible">#4A3548</div>
+                  <div class="swatch-values">
+                    RGB: 74, 53, 72<br>
+                    CMYK: 0, 28, 3, 71
+                  </div>
+                </div>
+              </div>
+              <div class="color-swatch swatch-bronze-spec">
+                <div class="swatch-title">Warm Bronze</div>
+                <div>
+                  <div class="swatch-hex-accessible">#C9A88C</div>
+                  <div class="swatch-values">
+                    RGB: 201, 168, 140<br>
+                    CMYK: 0, 16, 30, 21
+                  </div>
+                </div>
+              </div>
+              <div class="color-swatch swatch-stone-spec">
+                <div class="swatch-title">Warm Stone</div>
+                <div>
+                  <div class="swatch-hex-accessible">#E8E0D8</div>
+                  <div class="swatch-values">
+                    RGB: 232, 224, 216<br>
+                    CMYK: 0, 3, 7, 9
+                  </div>
+                </div>
+              </div>
+              <div class="color-swatch swatch-cream-spec">
+                <div class="swatch-title">Warm White</div>
+                <div>
+                  <div class="swatch-hex-accessible">#FAF7F4</div>
+                  <div class="swatch-values">
+                    RGB: 250, 247, 244<br>
+                    CMYK: 0, 1, 2, 2
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="color-ratio-bar">
+              <div class="ratio-segment segment-cream-en">Warm White &amp; Stone (50%)</div>
+              <div class="ratio-segment segment-plum">Deep Plum (35%)</div>
+              <div class="ratio-segment segment-bronze">Warm Bronze (15%)</div>
+            </div>
+
+            <div class="contrast-checker">
+              <h4 class="fs-95-lh-16-mb-12">Accessibility Matrix Compliance</h4>
+              <div class="contrast-row">
+                <span>Warm White text on Deep Plum</span>
+                <span class="contrast-demo contrast-plum-demo">Aa - Clinical Science</span>
+                <span class="contrast-badge">PASS (AAA - 6.2:1)</span>
+              </div>
+              <div class="contrast-row">
+                <span>Deep Charcoal text on Warm Stone</span>
+                <span class="contrast-demo contrast-stone-demo">Aa - Healthy Skins</span>
+                <span class="contrast-badge">PASS (AAA - 12.8:1)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">07</span>
+          </div>
         </div>
 
-        <div class="grid staggered-reveal justify-center">
-          <!-- Screen 1: Home/Routine -->
-          <div class="col-span-4 tablet-col-span-4 mobile-col-span-4 flex justify-center">
-            <div class="device-phone">
-              <div class="phone-notch"></div>
-              <div class="phone-content phone-screen-padding">
-                <div class="flex justify-between items-center mb-lg pt-md">
-                  <img src="assets/logo-horizontal.png" alt="Logo" class="logo-img-phone">
-                  <div class="phone-avatar-thumb"></div>
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>02.2 / نظام الألوان / معايير ترميز الألوان</span>
+          </div>
+          <div class="page-content-area">
+            <div class="colors-grid">
+              <div class="color-swatch swatch-plum-spec">
+                <div class="swatch-title">البرقوقي الداكن</div>
+                <div>
+                  <div class="swatch-hex-accessible">#4A3548</div>
+                  <div class="swatch-values">
+                    RGB: 74, 53, 72<br>
+                    CMYK: 0, 28, 3, 71
+                  </div>
                 </div>
-
-                <span class="font-mono color-bronze fs-8px">TODAY'S ANALYSIS</span>
-                <h4 class="fs-lg color-plum mb-md">Your Skincare Routine</h4>
-
-                <div class="card card-routine-morning">
-                  <span class="font-mono fs-8px color-plum-light">MORNING • 08:30 AM</span>
-                  <h5 class="weight-medium font-sans fs-sm my-xxs">Gentle Cleansing &amp; Moisture</h5>
-                  <p class="fs-xs color-plum-light">Focus on repairing epidermal barrier.</p>
+              </div>
+              <div class="color-swatch swatch-bronze-spec">
+                <div class="swatch-title">البرونزي الدافئ</div>
+                <div>
+                  <div class="swatch-hex-accessible">#C9A88C</div>
+                  <div class="swatch-values">
+                    RGB: 201, 168, 140<br>
+                    CMYK: 0, 16, 30, 21
+                  </div>
                 </div>
+              </div>
+              <div class="color-swatch swatch-stone-spec">
+                <div class="swatch-title">الحجري الدافئ</div>
+                <div>
+                  <div class="swatch-hex-accessible">#E8E0D8</div>
+                  <div class="swatch-values">
+                    RGB: 232, 224, 216<br>
+                    CMYK: 0, 3, 7, 9
+                  </div>
+                </div>
+              </div>
+              <div class="color-swatch swatch-cream-spec">
+                <div class="swatch-title">الأبيض الدافئ</div>
+                <div>
+                  <div class="swatch-hex-accessible">#FAF7F4</div>
+                  <div class="swatch-values">
+                    RGB: 250, 247, 244<br>
+                    CMYK: 0, 1, 2, 2
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <div class="card card-routine-evening">
-                  <span class="font-mono fs-8px color-plum-light">EVENING • 09:00 PM</span>
-                  <h5 class="weight-medium font-sans fs-sm my-xxs">Hydration &amp; Rest</h5>
-                  <p class="fs-xs color-plum-light">Barrier protection with minimal lipid content.</p>
+            <div class="color-ratio-bar">
+              <div class="ratio-segment segment-cream-ar">الأبيض الدافئ والحجري (50%)</div>
+              <div class="ratio-segment segment-plum">البرقوقي الداكن (35%)</div>
+              <div class="ratio-segment segment-bronze">البرونزي الدافئ (15%)</div>
+            </div>
+
+            <div class="contrast-checker">
+              <h4 class="fs-95-lh-16-mb-12">التوافق مع معايير الوصول العالمية</h4>
+              <div class="contrast-row">
+                <span>نص بالأبيض الدافئ على خلفية برقوقية</span>
+                <span class="contrast-demo contrast-plum-demo">ميدجو للتعليم الطبي</span>
+                <span class="contrast-badge">ناجح (AAA - 6.2:1)</span>
+              </div>
+              <div class="contrast-row">
+                <span>نص فحمي غامق على خلفية حجرية</span>
+                <span class="contrast-demo contrast-stone-demo">ترميم حاجز البشرة</span>
+                <span class="contrast-badge">ناجح (AAA - 12.8:1)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">07</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 08: Typography -->
+      <section class="brand-page theme-light" id="page-08">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>02.3 / Visual System / Typography System</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <span class="specimen-tag color-charcoal">ENGLISH PRIMARY (INTER)</span>
+                <p class="specimen-body-en">
+                  Inter is our primary modern sans-serif typeface, used for headings, UI text, labels, and all clinical descriptions to ensure maximum legibility.
+                </p>
+                <div class="specimen-chars-en">
+                  Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
+                </div>
+              </div>
+              <div class="col-6 col-border-l">
+                <span class="specimen-tag color-charcoal">ARABIC PRIMARY (IBM PLEX SANS ARABIC)</span>
+                <p class="specimen-body-ar">
+                  يتم استخدام خط IBM Plex Sans Arabic كخط أساسي حديث لنصوص الواجهات والقراءة الطبية والمقالات التثقيفية لضمان الوضوح الرقمي التام.
+                </p>
+                <div class="specimen-chars-ar dir-rtl-text-right">
+                  أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن هـ و ي ٠١٢٣٤٥٦٧٨٩
                 </div>
               </div>
             </div>
           </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">08</span>
+          </div>
+        </div>
 
-          <!-- Screen 2: Library -->
-          <div class="col-span-4 tablet-col-span-4 mobile-col-span-4 flex justify-center">
-            <div class="device-phone">
-              <div class="phone-notch"></div>
-              <div class="phone-content phone-screen-padding">
-                <div class="flex justify-between items-center mb-lg pt-md">
-                  <span class="weight-semibold fs-sm color-plum">MIDGO Library</span>
-                  <span class="fs-xs color-plum-light">Filter</span>
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>02.3 / نظام الهوية البصرية / أنظمة الخطوط والكتابة</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 col-border-l dir-ltr-text-left">
+                <span class="specimen-tag color-charcoal">ENGLISH PRIMARY (INTER)</span>
+                <p class="specimen-body-en">
+                  Inter is our primary modern sans-serif typeface, used for headings, UI text, labels, and all clinical descriptions to ensure maximum legibility.
+                </p>
+                <div class="specimen-chars-en">
+                  Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
                 </div>
-
-                <div class="form-group mb-md">
-                  <input type="text" class="input p-sm fs-xs" placeholder="Search guides...">
+              </div>
+              <div class="col-6 pr-32">
+                <span class="specimen-tag color-charcoal">ARABIC PRIMARY (IBM PLEX SANS ARABIC)</span>
+                <p class="specimen-body-ar">
+                  يتم استخدام خط IBM Plex Sans Arabic كخط أساسي حديث لنصوص الواجهات والقراءة الطبية والمقالات التثقيفية لضمان الوضوح الرقمي التام.
+                </p>
+                <div class="specimen-chars-ar text-right">
+                  أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن هـ و ي ٠١٢٣٤٥٦٧٨٩
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">08</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- PAGE 09: Grid & Spacing -->
+      <section class="brand-page theme-light" id="page-09">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>02.4 / Visual System / Grid &amp; Spacing System</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">The 8pt Layout Grid</h3>
+                <p class="fs-95-lh-16-mb-24">
+                  All structural margins, layout column gaps, and components follow standard multiples of 8px. This creates a balanced visual tempo.
+                </p>
                 <div class="flex flex-col gap-sm">
-                  <div class="card card-library-item">
-                    <div class="library-item-thumb"></div>
-                    <div>
-                      <h5 class="weight-semibold fs-xs mb-xs">Understanding Epidermal Hydration</h5>
-                      <span class="badge badge-plum fs-xxs-mono">E-BOOK</span>
-                    </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">8px</span>
+                    <div class="h-24 w-8 segment-bronze"></div>
                   </div>
-                  <div class="card card-library-item">
-                    <div class="library-item-thumb"></div>
-                    <div>
-                      <h5 class="weight-semibold fs-xs mb-xs">UV Protection in Saudi Deserts</h5>
-                      <span class="badge badge-bronze fs-xxs-mono">GUIDE</span>
-                    </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">16px</span>
+                    <div class="h-24 w-16 segment-bronze"></div>
+                  </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">24px</span>
+                    <div class="h-24 w-24 segment-bronze"></div>
+                  </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">32px</span>
+                    <div class="h-24 w-32 segment-bronze"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-border-l">
+                <h3 class="weight-medium color-plum fs-14-mb-16">Responsive Grid Architecture</h3>
+                <p class="fs-95-lh-16-mb-24">
+                  The layouts scale down smoothly based on the device width.
+                </p>
+                <div class="grid-12 gap-16">
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">DESKTOP</span>
+                    <span class="font-bold">12 Cols</span>
+                  </div>
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">TABLET</span>
+                    <span class="font-bold">8 Cols</span>
+                  </div>
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">MOBILE</span>
+                    <span class="font-bold">4 Cols</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 17: Packaging Direction -->
-    <section id="future-products" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="pack-num">17</span>
-          <h2 class="section-title" data-translate-key="pack-title">Packaging Direction</h2>
-          <p class="section-subtitle" data-translate-key="pack-subtitle">Future-proof product system featuring tactile ceramic textures and clean layout typography.</p>
-        </div>
-
-        <div class="grid staggered-reveal items-center">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="mockup-container">
-              <img src="assets/packaging-mockup.png" alt="skincare packaging mockup" class="img-responsive">
-            </div>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col justify-center">
-            <h3 class="weight-medium mb-md">Future Skincare Products Line</h3>
-            <p class="fs-sm color-plum-light mb-lg">Our future cosmetic line follows Japanese minimalism. Using textured matte ceramic jars and droplet bottles with warm bronze foil stamping. Everything feels handcrafted and medical, yet luxury.</p>
-            <div class="flex gap-xs">
-              <span class="badge badge-plum">Matte Ceramic</span>
-              <span class="badge badge-bronze">Copper Foil</span>
-              <span class="badge badge-olive">Minimal Label</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 18: Brand Motion -->
-    <section id="motion" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="motion-num">18</span>
-          <h2 class="section-title" data-translate-key="motion-title">Brand Motion</h2>
-          <p class="section-subtitle" data-translate-key="motion-subtitle">Visualizing transition speeds, motion physics, and user micro-interactions.</p>
-        </div>
-
-        <div class="grid staggered-reveal items-center">
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4">
-            <div class="motion-demo-box">
-              <div class="motion-object"></div>
-            </div>
-            <span class="font-mono text-center mt-sm fs-xs">HOVER BOX TO TRIGGER TIMING MOTION</span>
-          </div>
-
-          <div class="col-span-6 tablet-col-span-8 mobile-col-span-4 flex flex-col justify-center">
-            <h3 class="weight-medium mb-xs">Easing physics: --ease-premium</h3>
-            <p class="fs-sm color-plum-light mb-md">Transitions on hover and click states use our custom easing property `cubic-bezier(0.16, 1, 0.3, 1)`. This results in an ultra-premium responsiveness where items accelerate instantly and decelerate gradually, reflecting human touch and biological softness.</p>
-            <div class="card p-md">
-              <span class="font-mono color-plum">transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 19: Tone of Voice -->
-    <section id="tone-voice" class="section">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll">
-          <span class="section-num" data-translate-key="tone-num">19</span>
-          <h2 class="section-title" data-translate-key="tone-title">Tone of Voice</h2>
-          <p class="section-subtitle" data-translate-key="tone-subtitle">Scientific yet human, doctor yet friend. Exemplified copy styles across Arabic &amp; English.</p>
-        </div>
-
-        <div class="grid staggered-reveal">
-          <div class="col-span-12">
-            <div class="card p-0-overflow">
-              <table class="table-custom">
-                <thead>
-                  <tr class="thead-custom">
-                    <th class="p-md">Trait</th>
-                    <th class="p-md">English Tone Example</th>
-                    <th class="p-md text-right-ar">Arabic Tone Example</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="tr-border">
-                    <td class="td-custom-bold">Precise (70%)</td>
-                    <td class="td-custom-text">"Clinical study indicates barrier recovery within 14 days of lipid application."</td>
-                    <td class="td-custom-text-ar">"تشير الدراسات السريرية إلى تعافي حاجز البشرة خلال ١٤ يوماً من تطبيق الدهون."</td>
-                  </tr>
-                  <tr class="tr-border">
-                    <td class="td-custom-bold">Guiding (20%)</td>
-                    <td class="td-custom-text">"Before buying a product, track your skin response under sunlight for three hours."</td>
-                    <td class="td-custom-text-ar">"قبل شراء أي منتج، تتبع استجابة بشرتك تحت أشعة الشمس لمدة ثلاث ساعات."</td>
-                  </tr>
-                  <tr>
-                    <td class="td-custom-bold">Empathetic (10%)</td>
-                    <td class="td-custom-text">"Healthy skin isn't poreless. Your skin is a living organ, not a plastic surface."</td>
-                    <td class="td-custom-text-ar">"البشرة الصحية ليست خالية من المسام. بشرتك عضو حي يتنفس وليست سطحاً بلاستيكياً."</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 20: Final Brand Showcase -->
-    <section id="final-showcase" class="section bg-stone-light">
-      <div class="container">
-        <div class="section-title-wrapper reveal-on-scroll text-center max-w-600-center">
-          <span class="section-num" data-translate-key="showcase-num">20</span>
-          <h2 class="section-title" data-translate-key="showcase-title">Final Brand Showcase</h2>
-          <p class="section-subtitle text-center" data-translate-key="showcase-subtitle">The MIDGO visual identity brought together in a premium design layout.</p>
-        </div>
-
-        <div class="grid staggered-reveal items-center">
-          <div class="col-span-12">
-            <div class="mockup-container-lg">
-              <img src="assets/showcase-mockup.png" alt="midgo luxury brand showcase" class="img-responsive">
-            </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">09</span>
           </div>
         </div>
 
-        <div class="text-center reveal-on-scroll mt-xl">
-          <img src="assets/logo-stacked.png" alt="MIDGO Stacked Logo" class="logo-img-stacked-lg">
-          <h3 class="fs-2xl color-plum mb-md">Build understanding. Repair barrier.</h3>
-          <p class="color-plum-light fs-sm max-w-600-center mb-xl">Education first, treatment second. Join the movement towards healthy, clinical-backed understanding of skin health in Saudi Arabia.</p>
-          <a href="#hero" class="btn btn-primary">Back to Top</a>
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>02.4 / نظام الهوية / شبكة التخطيط والمسافات</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <h3 class="weight-medium color-plum fs-14-mb-16">شبكة المسافات بمضاعفات الـ 8</h3>
+                <p class="fs-95-lh-16-mb-24">
+                  تتبع جميع الحواف الخارجية، الهوامش البينية، وأحجام العناصر هيكلية تباعد تعتمد على مضاعفات الرقم 8 بكسل، مما يوفر اتساقاً مريحاً للعين.
+                </p>
+                <div class="flex flex-col gap-sm">
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">٨ بكسل</span>
+                    <div class="h-24 w-8 segment-bronze"></div>
+                  </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">١٦ بكسل</span>
+                    <div class="h-24 w-16 segment-bronze"></div>
+                  </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">٢٤ بكسل</span>
+                    <div class="h-24 w-24 segment-bronze"></div>
+                  </div>
+                  <div class="flex items-center gap-md">
+                    <span class="font-mono w-32 fs-75">٣٢ بكسل</span>
+                    <div class="h-24 w-32 segment-bronze"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-border-r">
+                <h3 class="weight-medium color-plum fs-14-mb-16">الشبكة المتجاوبة الرقمية</h3>
+                <p class="fs-95-lh-16-mb-24">
+                  تتكيف الأبعاد والتخطيطات الهندسية رقمياً بمرونة بناءً على حجم الشاشة لتسهيل التصفح.
+                </p>
+                <div class="grid-12 gap-16">
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">شاشات كبيرة</span>
+                    <span class="font-bold">١٢ عموداً</span>
+                  </div>
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">أجهزة لوحية</span>
+                    <span class="font-bold">٨ أعمدة</span>
+                  </div>
+                  <div class="col-4 essence-card text-center">
+                    <span class="font-mono color-charcoal mb-4 fs-7">هواتف ذكية</span>
+                    <span class="font-bold">٤ أعمدة</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">09</span>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="bg-plum color-stone-light p-md">
-    <div class="container flex justify-between items-center flex-wrap gap-md">
-      <div>
-        <img src="assets/logo-horizontal.png" alt="Logo" class="logo-img-white">
-        <p class="footer-copy">© 2026 MIDGO. All rights reserved. Saudi Arabia.</p>
-      </div>
-      <div class="flex gap-lg">
-        <a href="#about" class="nav-link color-stone-light fs-xs">About</a>
-        <a href="#design-system" class="nav-link color-stone-light fs-xs">Design System</a>
-        <a href="#ui-components" class="nav-link color-stone-light fs-xs">Components</a>
-      </div>
+      <!-- PAGE 10: UI Components -->
+      <section class="brand-page theme-light" id="page-10">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>03.0 / Digital Systems / UI Components</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <div class="essence-card card-components-left">
+                  <h4 class="mb-12">Button States</h4>
+                  <div class="flex flex-wrap gap-md">
+                    <button type="button" class="btn-print btn-plum-demo">Primary Plum</button>
+                    <button type="button" class="btn-icon btn-bronze-demo">Secondary Bronze</button>
+                  </div>
+                  <div class="badge-row-margin">
+                    <span class="badge badge-plum">Evidence-Based</span>
+                    <span class="badge badge-bronze">Clinical</span>
+                    <span class="badge badge-olive">Premium</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="essence-card card-components-left">
+                  <h4 class="mb-12">Input Fields</h4>
+                  <form class="form-wrap-custom" onsubmit="event.preventDefault();">
+                    <input type="text" class="input input-readonly-custom" placeholder="Sarah Al-Saud" readonly>
+                    <button type="submit" class="btn-print">Subscribe to Skin Library</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">10</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>03.0 / الأنظمة الرقمية / عناصر واجهة المستخدم</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <div class="essence-card card-components-left">
+                  <h4 class="mb-12">حالات الأزرار</h4>
+                  <div class="flex flex-wrap gap-md">
+                    <button type="button" class="btn-print btn-plum-demo">رئيسي برقوقي</button>
+                    <button type="button" class="btn-icon btn-bronze-demo">ثانوي برونزي</button>
+                  </div>
+                  <div class="badge-row-margin">
+                    <span class="badge badge-plum">مبني على الأدلة</span>
+                    <span class="badge badge-bronze">طبي سريري</span>
+                    <span class="badge badge-olive">فاخر</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="essence-card card-components-left">
+                  <h4 class="mb-12">حقول الإدخال والطلبات</h4>
+                  <form class="form-wrap-custom" onsubmit="event.preventDefault();">
+                    <input type="text" class="input input-readonly-custom" placeholder="سارة آل سعود" readonly>
+                    <button type="submit" class="btn-print">الاشتراك في مكتبة البشرة</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">10</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 11: Iconography Style -->
+      <section class="brand-page theme-light" id="page-11">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>03.1 / Visual Assets / Iconography Guidelines</span>
+          </div>
+          <div class="page-content-area">
+            <div class="icon-grid-custom">
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Routine</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Library</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="m16.2 7.8-2.9 6.3-6.3 2.9 2.9-6.3 6.3-2.9z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Guide</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Trust</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Care</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">Evidence</span>
+              </div>
+            </div>
+            <p class="p-24-margin-t-32">
+              Our iconography system follows a strict 1.5px stroke weight and 24px square bounding box grid with soft 2px rounded joints.
+            </p>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">11</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>03.1 / الأصول البصرية / إرشادات الأيقونات الموحدة</span>
+          </div>
+          <div class="page-content-area">
+            <div class="icon-grid-custom">
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">الروتين</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">المكتبة</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="m16.2 7.8-2.9 6.3-6.3 2.9 2.9-6.3 6.3-2.9z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">الدليل</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">الثقة</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">الرعاية</span>
+              </div>
+              <div class="essence-card card-icon-item">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                <span class="font-mono icon-mono-txt">الأدلة</span>
+              </div>
+            </div>
+            <p class="p-24-margin-t-32">
+              تتبع الأيقونات سمكاً موحداً بمقدار ١.٥ بكسل، وتتموضع بدقة داخل شبكة افتراضية بمقاس ٢٤ بكسل مع زوايا ناعمة دائرية بمقدار ٢ بكسل.
+            </p>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 12: Photography Direction -->
+      <section class="brand-page theme-light" id="page-12">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>03.2 / Visual Assets / Photography Direction</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <div class="photo-container-aspect">
+                  <img src="assets/photo-healthy-skin.png" alt="Healthy Skin Editorial" class="img-cover">
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">1. SKIN TEXTURE STUDY (Editorial Focus on Real Skin)</span>
+              </div>
+              <div class="col-6">
+                <div class="photo-container-aspect">
+                  <img src="assets/photo-saudi-lifestyle.png" alt="Saudi Minimalist Lifestyle" class="img-cover">
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">2. SAUDI LIFESTYLE MOOD (Soft Sunlight and Clean Architecture)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">12</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>03.2 / الأصول البصرية / إرشادات واتجاهات التصوير</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6">
+                <div class="photo-container-aspect">
+                  <img src="assets/photo-healthy-skin.png" alt="Healthy Skin Editorial" class="img-cover">
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">١. تفاصيل ملمس البشرة (دراسة واقعية خالية من الفلاتر التجميلية)</span>
+              </div>
+              <div class="col-6">
+                <div class="photo-container-aspect">
+                  <img src="assets/photo-saudi-lifestyle.png" alt="Saudi Minimalist Lifestyle" class="img-cover">
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">٢. نمط الحياة السعودي (إضاءة شمسية ناعمة وظلال معمارية هادئة)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">12</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 13: Illustration Style -->
+      <section class="brand-page theme-light" id="page-13">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>03.3 / Visual Assets / Illustration Guidelines</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <!-- Custom cell line art SVG -->
+                <svg width="340" height="240" viewBox="0 0 280 200" fill="none" class="illus-svg-box">
+                  <line x1="20" y1="160" x2="260" y2="160" stroke="var(--primary-green)" stroke-width="1" stroke-dasharray="4 4" />
+                  <line x1="20" y1="110" x2="260" y2="110" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <path d="M40 70 C 40 40, 70 40, 70 70 C 70 100, 100 100, 100 70 C 100 40, 130 40, 130 70 C 130 100, 160 100, 160 70 C 160 40, 190 40, 190 70" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="55" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="85" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="115" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="145" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="70" cy="135" r="6" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <circle cx="140" cy="135" r="6" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <circle cx="70" cy="135" r="2" fill="var(--accent-orange)"/>
+                  <circle cx="140" cy="135" r="2" fill="var(--accent-orange)"/>
+                </svg>
+              </div>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum">Medical Line-Work Illustrations</h3>
+                <p class="fs-95-lh-16">
+                  We draw anatomical and biological structures (skin layers, epidermal cells, lipid bindings) with simplified single-weight lines to keep a clean medical editorial feel.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">1.5px stroke weight</span>
+                  <span class="badge badge-bronze">Geometric line-art</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">13</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>03.3 / الأصول البصرية / إرشادات الرسوم التوضيحية</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <!-- Custom cell line art SVG -->
+                <svg width="340" height="240" viewBox="0 0 280 200" fill="none" class="illus-svg-box">
+                  <line x1="20" y1="160" x2="260" y2="160" stroke="var(--primary-green)" stroke-width="1" stroke-dasharray="4 4" />
+                  <line x1="20" y1="110" x2="260" y2="110" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <path d="M40 70 C 40 40, 70 40, 70 70 C 70 100, 100 100, 100 70 C 100 40, 130 40, 130 70 C 130 100, 160 100, 160 70 C 160 40, 190 40, 190 70" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="55" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="85" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="115" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="145" cy="90" r="4" fill="var(--primary-green)" opacity="0.6"/>
+                  <circle cx="70" cy="135" r="6" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <circle cx="140" cy="135" r="6" stroke="var(--primary-green)" stroke-width="1.5" />
+                  <circle cx="70" cy="135" r="2" fill="var(--accent-orange)"/>
+                  <circle cx="140" cy="135" r="2" fill="var(--accent-orange)"/>
+                </svg>
+              </div>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum">رسومات خطية طبية توضيحية</h3>
+                <p class="fs-95-lh-16">
+                  نرسم الهياكل الجلدية والتشريحية (خلايا البشرة، طبقات الجلد، روابط الدهون) بخطوط هندسية مبسطة ذات سمك موحد للمحافظة على طابع علمي تحريري راقٍ.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">سمك خط ١.٥ بكسل</span>
+                  <span class="badge badge-bronze">رسومات هندسية</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">13</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 14: Social Media -->
+      <section class="brand-page theme-light" id="page-14">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>04.0 / Social Media Applications</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center flex-col">
+                <div class="social-card-ig-post">
+                  <div class="social-ig-header">
+                    <div class="social-ig-avatar"><img src="assets/logo-stacked.png" alt="Icon" class="social-ig-avatar-img"></div>
+                    <span class="social-ig-name">midgo.education</span>
+                  </div>
+                  <div class="social-ig-canvas">
+                    <span class="font-mono social-ig-tag fs-55">CHAPTER 01: SKIN BARRIER</span>
+                    <h3 class="social-ig-title">Understanding your skin barrier type.</h3>
+                    <span class="font-mono social-ig-footer">SWIPE FOR GUIDE →</span>
+                  </div>
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">INSTAGRAM EDUCATIONAL CAROUSEL (Grid template layout)</span>
+              </div>
+              <div class="col-6 flex-center flex-col">
+                <div class="social-card-ig-post">
+                  <div class="social-ig-header">
+                    <div class="social-ig-avatar"><img src="assets/logo-stacked.png" alt="Icon" class="social-ig-avatar-img"></div>
+                    <span class="social-ig-name">midgo.education</span>
+                  </div>
+                  <div class="social-ig-canvas-photo">
+                    <img src="assets/photo-healthy-skin.png" alt="Healthy Skin" class="img-cover">
+                    <div class="social-ig-overlay">
+                      <h4 class="social-ig-overlay-text">Evidence-based dermatological education prepared by certified specialists.</h4>
+                    </div>
+                  </div>
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">LIFESTYLE POST TEMPLATE (Photo with metadata overlays)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">14</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>04.0 / قنوات التواصل / هوية وقوالب إنستغرام</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center flex-col">
+                <div class="social-card-ig-post-ar">
+                  <div class="social-ig-header">
+                    <div class="social-ig-avatar"><img src="assets/logo-stacked.png" alt="Icon" class="social-ig-avatar-img"></div>
+                    <span class="social-ig-name-ar">midgo.education</span>
+                  </div>
+                  <div class="social-ig-canvas">
+                    <span class="font-mono social-ig-tag fs-55">الفصل الأول: حاجز البشرة</span>
+                    <h3 class="social-ig-title-ar">فهم وتحليل نوع حاجز بشرتك الطبيعي.</h3>
+                    <span class="font-mono social-ig-footer">اسحب ليسار الصفحة لقراءة المزيد ←</span>
+                  </div>
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">منشورات إنستغرام التثقيفية (تنسيق شبكي متناسق)</span>
+              </div>
+              <div class="col-6 flex-center flex-col">
+                <div class="social-card-ig-post-ar">
+                  <div class="social-ig-header">
+                    <div class="social-ig-avatar"><img src="assets/logo-stacked.png" alt="Icon" class="social-ig-avatar-img"></div>
+                    <span class="social-ig-name-ar">midgo.education</span>
+                  </div>
+                  <div class="social-ig-canvas-photo">
+                    <img src="assets/photo-healthy-skin.png" alt="Healthy Skin" class="img-cover">
+                    <div class="social-ig-overlay">
+                      <h4 class="social-ig-overlay-text-ar">تعليم طبي سريري موثوق، تم إعداده وتدقيقه بأيدي أطباء جلدية معتمدين.</h4>
+                    </div>
+                  </div>
+                </div>
+                <span class="font-mono color-charcoal mt-12-fs-75">قالب نمط الحياة اليومي (دمج الصور مع النصوص البصرية)</span>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">14</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 15: E-book Cover System -->
+      <section class="brand-page theme-light" id="page-15">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>04.1 / Applications / Educational E-books Cover Layouts</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <div class="ebook-cover-wrap">
+                  <img src="assets/ebook-cover.png" alt="MIDGO E-book Cover" class="img-cover">
+                </div>
+              </div>
+              <div class="col-6 ebook-desc-wrap">
+                <h3 class="weight-medium color-plum">Educational E-book Architecture</h3>
+                <p class="fs-95-lh-16">
+                  The digital cover covers are structured around a strict grid layout, presenting academic-level editorial headers at the center, publication data at the bottom, and branding identifiers in the top-left corner.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">Clean Grid Guidelines</span>
+                  <span class="badge badge-bronze">Saudi Medical Licensing Info</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">15</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>04.1 / التطبيقات العملية / تخطيط أغلفة الكتب الرقمية</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <div class="ebook-cover-wrap">
+                  <img src="assets/ebook-cover.png" alt="MIDGO E-book Cover" class="img-cover">
+                </div>
+              </div>
+              <div class="col-6 ebook-desc-wrap">
+                <h3 class="weight-medium color-plum">هندسة أغلفة الكتب الطبية التثقيفية</h3>
+                <p class="fs-95-lh-16">
+                  تعتمد أغلفة الكتب الرقمية على هيكل تخطيط شبكي صارم وموحد. نضع عنوان الكتاب الأكاديمي التحريري في المنتصف، ومعلومات النشر الطبي في الأسفل، بينما يستقر شعار ميدجو في الركن العلوي الأيمن.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">إرشادات شبكة التخطيط</span>
+                  <span class="badge badge-bronze">معلومات الترخيص الطبي</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">15</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 16: Mobile App UI (Simulator) -->
+      <section class="brand-page theme-light" id="page-16">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>04.2 / Applications / Mobile App Interface Simulator</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 phone-col-align">
+                <div class="phone-frame">
+                  <div class="phone-screen">
+                    <!-- Splash screen -->
+                    <div class="phone-screen-state phone-splash active">
+                      <img src="assets/logo-stacked.png" alt="Splash Logo" class="phone-splash-logo">
+                      <div class="phone-splash-spinner"></div>
+                    </div>
+
+                    <!-- Feed screen -->
+                    <div class="phone-screen-state phone-home phone-home-wrap">
+                      <div class="phone-home-header">
+                        <img src="assets/logo-horizontal.png" alt="Logo" class="phone-home-header-logo">
+                        <span class="phone-home-header-tag fs-6">DRY SKIN</span>
+                      </div>
+                      <div class="phone-home-banner">
+                        <span class="phone-home-banner-tag">DAILY ANATOMY</span>
+                        <h4 class="phone-home-banner-title">Your Barrier Routine</h4>
+                        <p class="phone-home-banner-text">Follow a minimalist routine today to restore lipid balance.</p>
+                      </div>
+                      <div class="card phone-home-card-morning">
+                        <span class="phone-home-card-morning-tag">MORNING ROUTINE</span>
+                        <h5 class="phone-home-card-morning-title fs-65">Gentle Cleansing &amp; Moist</h5>
+                      </div>
+                      <div class="card phone-home-card-evening">
+                        <span class="phone-home-card-morning-tag">EVENING ROUTINE</span>
+                        <h5 class="phone-home-card-morning-title fs-65">Restoring Lipids &amp; Hydration</h5>
+                      </div>
+                    </div>
+
+                    <!-- Library screen -->
+                    <div class="phone-screen-state phone-empty-state phone-library-wrap">
+                      <div class="phone-library-header">
+                        <span class="phone-library-title">MIDGO Library</span>
+                        <span class="color-charcoal fs-6">Guides</span>
+                      </div>
+                      <div class="phone-library-search fs-65">Search skincare guides...</div>
+                      <div class="card phone-library-item">
+                        <div class="phone-library-item-thumb"></div>
+                        <div>
+                          <h5 class="phone-library-item-title">Epidermal Hydration</h5>
+                          <span class="badge badge-plum phone-library-item-badge">E-BOOK</span>
+                        </div>
+                      </div>
+                      <div class="card phone-library-item">
+                        <div class="phone-library-item-thumb"></div>
+                        <div>
+                          <h5 class="phone-library-item-title">UV Desert Protection</h5>
+                          <span class="badge badge-bronze phone-library-item-badge">GUIDE</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="phone-dot-controls">
+                      <span class="phone-dot active"></span><span class="phone-dot"></span><span class="phone-dot"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui-mobile-sub-selector">
+                  <button type="button" class="ui-mobile-sub-btn active">Splash</button>
+                  <button type="button" class="ui-mobile-sub-btn">Routine</button>
+                  <button type="button" class="ui-mobile-sub-btn">Library</button>
+                </div>
+              </div>
+              <div class="col-6 col-right-justify">
+                <h3 class="color-plum fs-14-mb-16">Mobile Interface Guidelines</h3>
+                <p class="fs-95-lh-16">
+                  MIDGO's application interfaces prioritize minimal cards, clear section boundaries, and spacious white space. Color accents are strictly limited to badge identifiers (Plum for Ebooks, Bronze for Guides) and primary action triggers to avoid distraction.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">16</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>04.2 / التطبيقات العملية / محاكي واجهات تطبيق الهاتف الذكي</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 phone-col-align">
+                <div class="phone-frame">
+                  <div class="phone-screen dir-rtl-text-right">
+                    <!-- Splash screen -->
+                    <div class="phone-screen-state phone-splash active">
+                      <img src="assets/logo-stacked.png" alt="Splash Logo" class="phone-splash-logo">
+                      <div class="phone-splash-spinner"></div>
+                    </div>
+
+                    <!-- Feed screen -->
+                    <div class="phone-screen-state phone-home phone-home-wrap">
+                      <div class="phone-home-header">
+                        <img src="assets/logo-horizontal.png" alt="Logo" class="phone-home-header-logo">
+                        <span class="phone-home-header-tag fs-6">بشرة جافة</span>
+                      </div>
+                      <div class="phone-home-banner">
+                        <span class="phone-home-banner-tag">تحليل اليوم الطبي</span>
+                        <h4 class="phone-home-banner-title">روتين ترميم الحاجز</h4>
+                        <p class="phone-home-banner-text">اتبع روتين عناية بسيط اليوم لإعادة توازن دهون البشرة.</p>
+                      </div>
+                      <div class="card phone-home-card-morning-ar">
+                        <span class="phone-home-card-morning-tag">الروتين الصباحي</span>
+                        <h5 class="phone-home-card-morning-title-ar">تنظيف لطيف وترطيب خفيف</h5>
+                      </div>
+                      <div class="card phone-home-card-evening-ar">
+                        <span class="phone-home-card-morning-tag">الروتين المسائي</span>
+                        <h5 class="phone-home-card-morning-title-ar">ترميم الدهون العميقة والتغذية</h5>
+                      </div>
+                    </div>
+
+                    <!-- Library screen -->
+                    <div class="phone-screen-state phone-empty-state phone-library-wrap">
+                      <div class="phone-library-header">
+                        <span class="phone-library-title-ar">مكتبة ميدجو</span>
+                        <span class="color-charcoal fs-6">الأدلة</span>
+                      </div>
+                      <div class="phone-library-search fs-65">ابحث في أدلة البشرة والجلدية...</div>
+                      <div class="card phone-library-item-ar">
+                        <div class="phone-library-item-thumb"></div>
+                        <div class="phone-library-item-meta">
+                          <h5 class="phone-library-item-title-ar">ترطيب خلايا البشرة</h5>
+                          <span class="badge badge-plum phone-library-item-badge">كتاب رقمي</span>
+                        </div>
+                      </div>
+                      <div class="card phone-library-item-ar">
+                        <div class="phone-library-item-thumb"></div>
+                        <div class="phone-library-item-meta">
+                          <h5 class="phone-library-item-title-ar">الحماية من الشمس الصحراوية</h5>
+                          <span class="badge badge-bronze phone-library-item-badge">دليل مبسط</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="phone-dot-controls">
+                      <span class="phone-dot active"></span><span class="phone-dot"></span><span class="phone-dot"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui-mobile-sub-selector">
+                  <button type="button" class="ui-mobile-sub-btn active">الشاشة الرئيسية</button>
+                  <button type="button" class="ui-mobile-sub-btn">الروتين اليومي</button>
+                  <button type="button" class="ui-mobile-sub-btn">مكتبة المعرفة</button>
+                </div>
+              </div>
+              <div class="col-6 col-right-justify">
+                <h3 class="color-plum fs-14-mb-16">معايير تصميم واجهات الهواتف</h3>
+                <p class="fs-95-lh-16">
+                  تركز واجهات تطبيق ميدجو على الكروت المبسطة وتحديد أبعاد الأقسام بوضوح. يتم توظيف الألوان برصانة بالغة، مقتصرة على التصنيفات الرئيسية (البنفسجي للكتب الرقمية، البرونزي للأدلة الإرشادية) والأزرار الأساسية لمنع تشتت القراء.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">16</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 17: Packaging specs -->
+      <section class="brand-page theme-light" id="page-17">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>04.3 / Applications / Cosmetic Packaging &amp; Retail</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <div class="photo-container-aspect">
+                  <img src="assets/packaging-mockup.png" alt="MIDGO Packaging Direction" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum">Matte Ceramic Product Materials</h3>
+                <p class="fs-95-lh-16">
+                  Future skincare products will follow Japanese minimalism. We specify tactile, matte ceramic surfaces in warm stone and off-white colors, combined with warm bronze foil hot-stamping for branding and titles.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">Matte Ceramic</span>
+                  <span class="badge badge-bronze">Copper Foil Stamping</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">17</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>04.3 / التطبيقات العملية / عبوات المنتجات والتغليف</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-6 flex-center">
+                <div class="photo-container-aspect">
+                  <img src="assets/packaging-mockup.png" alt="MIDGO Packaging Direction" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-6 flex-col-center-gap-16">
+                <h3 class="weight-medium color-plum">خامات التغليف السيراميكية المطفأة</h3>
+                <p class="fs-95-lh-16">
+                  تعتمد مستحضرات التجميل المستقبلية من ميدجو على المينيمالية اليابانية البسيطة. نحدد الأواني السيراميكية المطفأة ذات الملمس الخشن بألوان الحجر الطبيعي والأبيض الدافئ، وندمجها مع نقوش الحفر النحاسية الدافئة للشعارات.
+                </p>
+                <div class="flex gap-sm">
+                  <span class="badge badge-plum">سيراميك مطفأ</span>
+                  <span class="badge badge-bronze">حفر نحاسي ساخن</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">17</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 18: Tone of Voice -->
+      <section class="brand-page theme-light" id="page-18">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>05.0 / Verbal System / Tone of Voice &amp; Copywriting</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-12">
+                <div class="card p-0-overflow">
+                  <table class="table-custom">
+                    <thead>
+                      <tr class="thead-custom">
+                        <th class="p-md">Trait</th>
+                        <th class="p-md">English Tone Example</th>
+                        <th class="p-md text-right-ar">Arabic Tone Example</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="tr-border">
+                        <td class="td-custom-bold">Precise (70%)</td>
+                        <td class="td-custom-text">"Clinical study indicates barrier recovery within 14 days of lipid application."</td>
+                        <td class="td-custom-text-ar">"تشير الدراسات السريرية إلى تعافي حاجز البشرة خلال ١٤ يوماً من تطبيق الدهون."</td>
+                      </tr>
+                      <tr class="tr-border">
+                        <td class="td-custom-bold">Guiding (20%)</td>
+                        <td class="td-custom-text">"Before buying a product, track your skin response under sunlight for three hours."</td>
+                        <td class="td-custom-text-ar">"قبل شراء أي منتج، تتبع استجابة بشرتك تحت أشعة الشمس لمدة ثلاث ساعات."</td>
+                      </tr>
+                      <tr>
+                        <td class="td-custom-bold">Empathetic (10%)</td>
+                        <td class="td-custom-text">"Healthy skin isn't poreless. Your skin is a living organ, not a plastic surface."</td>
+                        <td class="td-custom-text-ar">"البشرة الصحية ليست خالية من المسام. بشرتك عضو حي يتنفس وليست سطحاً بلاستيكياً."</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">18</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>05.0 / نظام التعبير / نبرة الصوت وصياغة المحتوى</span>
+          </div>
+          <div class="page-content-area">
+            <div class="grid-12">
+              <div class="col-12">
+                <div class="card p-0-overflow">
+                  <table class="table-custom">
+                    <thead>
+                      <tr class="thead-custom">
+                        <th class="p-md">السمة البلاغية</th>
+                        <th class="p-md">نموذج التعبير بالإنجليزي</th>
+                        <th class="p-md text-right-ar">نموذج التعبير بالعربي</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="tr-border">
+                        <td class="td-custom-bold">الدقة العلمية (٧٠٪)</td>
+                        <td class="td-custom-text">"Clinical study indicates barrier recovery within 14 days of lipid application."</td>
+                        <td class="td-custom-text-ar">"تشير الدراسات السريرية إلى تعافي حاجز البشرة خلال ١٤ يوماً من تطبيق الدهون."</td>
+                      </tr>
+                      <tr class="tr-border">
+                        <td class="td-custom-bold">الإرشاد الموجه (٢٠٪)</td>
+                        <td class="td-custom-text">"Before buying a product, track your skin response under sunlight for three hours."</td>
+                        <td class="td-custom-text-ar">"قبل شراء أي منتج، تتبع استجابة بشرتك تحت أشعة الشمس لمدة ثلاث ساعات."</td>
+                      </tr>
+                      <tr>
+                        <td class="td-custom-bold">التعاطف والدعم (١٠٪)</td>
+                        <td class="td-custom-text">"Healthy skin isn't poreless. Your skin is a living organ, not a plastic surface."</td>
+                        <td class="td-custom-text-ar">"البشرة الصحية ليست خالية من المسام. بشرتك عضو حي يتنفس وليست سطحاً بلاستيكياً."</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">18</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 19: Final Showcase -->
+      <section class="brand-page theme-dark" id="page-19">
+        <div class="crop-mark crop-tl"></div><div class="crop-mark crop-tr"></div>
+        <div class="crop-mark crop-bl"></div><div class="crop-mark crop-br"></div>
+
+        <!-- English -->
+        <div class="lang-en page-container-flex">
+          <div class="page-master-header">
+            <span class="master-doc-title">MIDGO Brand Identity Book</span>
+            <span>05.1 / Visual Systems Showcase</span>
+          </div>
+          <div class="page-content-area flex-center">
+            <div class="showcase-mockup-wrapper">
+              <img src="assets/showcase-mockup.png" alt="MIDGO Brand Showcase Collage" class="img-responsive">
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>MIDGO — ALL RIGHTS RESERVED</span>
+            <span class="page-number">19</span>
+          </div>
+        </div>
+
+        <!-- Arabic -->
+        <div class="lang-ar page-container-flex" dir="rtl">
+          <div class="page-master-header">
+            <span class="master-doc-title">دليل الهوية البصرية لميدجو</span>
+            <span>05.1 / معرض الأصول والهوية الختامي</span>
+          </div>
+          <div class="page-content-area flex-center">
+            <div class="showcase-mockup-wrapper">
+              <img src="assets/showcase-mockup.png" alt="MIDGO Brand Showcase Collage" class="img-responsive">
+            </div>
+          </div>
+          <div class="page-master-footer">
+            <span>ميدجو — جميع الحقوق محفوظة</span>
+            <span class="page-number">19</span>
+          </div>
+        </div>
+      </section>
+
     </div>
-  </footer>
+  </main>
+</div>
 
-  <!-- JS Scripts -->
-  <script src="js/app.js"></script>
+<!-- Lottie Animations Script & Lottie Player CDN fallback -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
