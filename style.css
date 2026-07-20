@@ -22,7 +22,7 @@
   --grid-gap: 32px;
 
   /* Mobile Layout Constants */
-  --mobile-header-height: 48px;
+  --header-height: 48px;
   --page-top-spacing: 32px;
 }
 
@@ -2424,15 +2424,20 @@ html.lang-ar .btn-menu {
     display: none !important; /* Hide print on mobile/tablet */
   }
 
-  /* Viewport and Book Container adjustments - Reset for edge-to-edge mobile overlays */
+  /* Viewport offsets content globally below the fixed mobile header footprint */
   .viewport {
     padding: 0 !important;
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto;
+    min-height: calc(100vh - calc(var(--header-height) + env(safe-area-inset-top, 0px)));
+    min-height: calc(100dvh - calc(var(--header-height) + env(safe-area-inset-top, 0px)));
     display: block;
     overflow: visible;
+    box-sizing: border-box !important;
   }
 
   .book-container {
@@ -2447,18 +2452,19 @@ html.lang-ar .btn-menu {
     margin: 0 auto;
   }
 
-  /* Responsive Brand Page Layout Flow - Offset content top mathematically */
+  /* Responsive Brand Page Layout Flow - Inherits vertical rhythm via simple page paddings */
   .brand-page {
     position: relative;
     display: none;
     opacity: 0;
     visibility: hidden;
     height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: calc(var(--mobile-header-height) + var(--page-top-spacing) + env(safe-area-inset-top, 0px)) calc(20px + env(safe-area-inset-left, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) calc(20px + env(safe-area-inset-right, 0px)) !important;
+    min-height: calc(100vh - calc(var(--header-height) + env(safe-area-inset-top, 0px))) !important;
+    min-height: calc(100dvh - calc(var(--header-height) + env(safe-area-inset-top, 0px))) !important;
+    padding: var(--page-top-spacing) calc(20px + env(safe-area-inset-left, 0px)) 32px calc(20px + env(safe-area-inset-right, 0px)) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    box-sizing: border-box !important;
   }
 
   .brand-page.active {
@@ -3583,9 +3589,11 @@ html.lang-ar .social-post-caption {
     margin-bottom: 2px !important;
   }
 
-  /* Mobile viewport safe area resets for full-width layout */
+  /* Mobile viewport safe area offsets for full-width layout */
   .viewport {
     padding: 0 !important;
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -3758,9 +3766,10 @@ html.lang-ar .social-post-caption {
 }
 
 @media (max-width: 480px) {
-  /* Keep viewport padding reset to zero to avoid overlaps */
+  /* Keep viewport padding reset to zero but maintain header top offset */
   .viewport {
     padding: 0 !important;
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
   }
 
   .page-section-title {
