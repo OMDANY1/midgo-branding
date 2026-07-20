@@ -3333,3 +3333,116 @@ html.lang-ar .page-section-desc {
   }
 }
 
+/* ==================================================== */
+/* DESIGN QA - GRID SPACING AND ALIGNMENT CLASSES */
+/* ==================================================== */
+
+.w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
+
+/* Sub-card styling to avoid nested card shadows */
+.sub-card-grid {
+  border: 1px solid rgba(74, 53, 72, 0.08) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  text-align: center !important;
+  background-color: rgba(74, 53, 72, 0.02) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.brand-page.theme-dark .sub-card-grid {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Pain points separator rules */
+.pain-point-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.border-b-light {
+  border-bottom: 1px solid rgba(74, 53, 72, 0.08) !important;
+}
+
+.brand-page.theme-dark .border-b-light {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.mb-16 { margin-bottom: 16px !important; }
+.pb-16 { padding-bottom: 16px !important; }
+.mt-12-block { display: block !important; margin-top: 12px !important; }
+
+/* E-book Overlap Layout Grid (snaps cover to cols 1-7 and card to cols 6-12) */
+.ebook-grid-overlap {
+  display: grid !important;
+  grid-template-columns: repeat(12, 1fr) !important;
+  gap: var(--grid-gap) !important;
+  width: 100% !important;
+  position: relative !important;
+  align-items: center !important;
+}
+
+.ebook-cover-col {
+  grid-column: 1 / 8 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.ebook-card-col {
+  grid-column: 6 / 13 !important;
+  z-index: 2 !important;
+  margin-top: 40px !important;
+}
+
+/* RTL translation for ebook overlap grid */
+html.lang-ar .ebook-cover-col {
+  grid-column: 6 / 13 !important;
+}
+
+html.lang-ar .ebook-card-col {
+  grid-column: 1 / 8 !important;
+  z-index: 2 !important;
+  margin-top: 40px !important;
+}
+
+/* Ebook cover dimensions spec */
+.ebook-cover-wrap {
+  max-width: 240px !important;
+  height: 340px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px -10px rgba(74, 53, 72, 0.25) !important;
+  border: 1px solid rgba(74, 53, 72, 0.1) !important;
+  display: flex !important;
+}
+
+/* Social Media Post Alignments */
+.social-post-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 300px !important;
+}
+
+.social-post-caption {
+  font-family: var(--font-english) !important;
+  font-size: 0.72rem !important;
+  line-height: 1.4 !important;
+  color: var(--charcoal) !important;
+  opacity: 0.75 !important;
+  text-align: center !important;
+  margin-top: 12px !important;
+  width: 100% !important;
+}
+
+html.lang-ar .social-post-caption {
+  font-family: var(--font-arabic) !important;
+}
+
+
