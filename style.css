@@ -3136,3 +3136,200 @@ html.lang-ar .btn-menu {
 .fs-6 { font-size: 0.6rem !important; }
 .fs-65 { font-size: 0.65rem !important; }
 .color-charcoal { color: var(--charcoal) !important; }
+
+/* ==================================================== */
+/* VISUAL ALIGNMENT, RHYTHM, AND CARD NORMALIZATION */
+/* ==================================================== */
+
+/* Page layout structure with exact 24px and 40px vertical rhythm */
+.page-container-flex {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.page-header-group {
+  margin-top: 10px !important;
+  margin-bottom: 32px !important; /* Top margin to content */
+}
+
+.page-section-title {
+  font-family: var(--font-serif) !important;
+  font-size: 2.2rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  color: var(--primary-green) !important;
+  margin-bottom: 12px !important; /* 24px spacing rule (12px title + font margins) */
+}
+
+.brand-page.theme-dark .page-section-title {
+  color: var(--accent-orange) !important;
+}
+
+.page-section-desc {
+  font-family: var(--font-english) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.5 !important;
+  color: var(--charcoal) !important;
+  max-width: 900px !important;
+  opacity: 0.85 !important;
+}
+
+html.lang-ar .page-section-desc {
+  font-family: var(--font-arabic) !important;
+}
+
+.brand-page.theme-dark .page-section-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.page-content-grid {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  margin-bottom: 10px !important;
+}
+
+/* Normalized Card Styles for Design System Consistency */
+.essence-card, .card {
+  border-radius: 12px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 30px -10px rgba(74, 53, 72, 0.04) !important;
+  border: 1px solid rgba(74, 53, 72, 0.08) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.essence-card h3, .card h5, .card h4 {
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  font-family: var(--font-serif) !important;
+  color: var(--primary-green) !important;
+}
+
+.essence-card p, .card p {
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  color: var(--charcoal) !important;
+  opacity: 0.85 !important;
+  margin: 0 !important;
+}
+
+/* Specific theme overrides for cards */
+.brand-page.theme-dark .essence-card,
+.brand-page.theme-dark .card {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--white) !important;
+  box-shadow: none !important;
+}
+
+.brand-page.theme-dark .essence-card h3,
+.brand-page.theme-dark .card h5,
+.brand-page.theme-dark .card h4 {
+  color: var(--accent-orange) !important;
+}
+
+.brand-page.theme-dark .essence-card p,
+.brand-page.theme-dark .card p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Premium Cover Page Background and Glassmorphic Title Container */
+.cover-bg-premium {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-gradient-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.2;
+}
+
+.bg-circle-1 {
+  top: -15%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-orange) 0%, transparent 70%);
+}
+
+.bg-circle-2 {
+  bottom: -15%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary-green) 0%, transparent 70%);
+}
+
+.bg-curved-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+.cover-text-glass {
+  background: rgba(250, 247, 244, 0.55) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(201, 168, 140, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 50px 70px !important;
+  box-shadow: 0 30px 60px -15px rgba(74, 53, 72, 0.06) !important;
+  max-width: 900px !important;
+  margin: auto !important;
+  text-align: center !important;
+}
+
+.cover-title {
+  font-size: 5.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  margin-bottom: 20px !important;
+  color: var(--primary-green) !important;
+}
+
+.cover-title span {
+  color: var(--accent-orange) !important;
+}
+
+.cover-subtitle {
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  color: var(--charcoal) !important;
+  opacity: 0.9 !important;
+  margin: 0 !important;
+}
+
+/* Card layout adjustments under 1280px */
+@media (max-width: 1279px) {
+  .cover-title {
+    font-size: 3.2rem !important;
+    letter-spacing: -1px !important;
+  }
+  .cover-subtitle {
+    font-size: 1.25rem !important;
+  }
+  .cover-text-glass {
+    padding: 30px 24px !important;
+    border-radius: 12px !important;
+  }
+}
+
