@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.remove('drawer-open');
     }
     
+    // Scroll to the top of the page on mobile to prevent cut-off headers
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
     handlePageEnter(currentPageIndex);
   }
   
