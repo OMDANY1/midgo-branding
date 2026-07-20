@@ -7,38 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.querySelector('.sidebar');
   const btnMenuToggle = document.getElementById('btn-menu-toggle');
   const drawerOverlay = document.getElementById('drawer-overlay');
-  
+
   let currentPageIndex = 0;
-  
+
   // ----------------------------------------------------
   // 1. Viewport Scaling (A4 Landscape aspect-ratio)
   // ----------------------------------------------------
   const A4_WIDTH = 1414;
   const A4_HEIGHT = 1000;
-  
+
   function adjustScale() {
     if (window.matchMedia('print').matches) {
       bookContainer.style.transform = 'none';
       return;
     }
-    
+
     // Disable scale transform on tablets and mobile screens (< 1280px)
     if (window.innerWidth < 1280) {
       bookContainer.style.transform = 'none';
       return;
     }
-    
+
     const viewportWidth = viewport.clientWidth;
     const viewportHeight = viewport.clientHeight;
-    
+
     // Calculate scale factor with a 40px buffer margin
     const scaleX = (viewportWidth - 80) / A4_WIDTH;
     const scaleY = (viewportHeight - 80) / A4_HEIGHT;
     const scale = Math.min(scaleX, scaleY, 1.25); // Limit max scale to 1.25x
-    
+
     bookContainer.style.transform = `scale(${scale})`;
   }
-  
+
   window.addEventListener('resize', adjustScale);
   adjustScale();
   setTimeout(adjustScale, 100);
@@ -48,39 +48,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   const btnLangEn = document.getElementById('btn-lang-en');
   const btnLangAr = document.getElementById('btn-lang-ar');
-  
+
   function setLanguage(lang) {
     if (lang === 'ar') {
       htmlRoot.classList.remove('lang-en');
       htmlRoot.classList.add('lang-ar');
       htmlRoot.setAttribute('dir', 'rtl');
-      
+
       if (btnLangAr) btnLangAr.classList.add('active');
       if (btnLangEn) btnLangEn.classList.remove('active');
-      
+
       localStorage.setItem('midgo-lang', 'ar');
     } else {
       htmlRoot.classList.remove('lang-ar');
       htmlRoot.classList.add('lang-en');
       htmlRoot.setAttribute('dir', 'ltr');
-      
+
       if (btnLangEn) btnLangEn.classList.add('active');
       if (btnLangAr) btnLangAr.classList.remove('active');
-      
+
       localStorage.setItem('midgo-lang', 'en');
     }
-    
+
     // Force scale adjustment on direction change
     adjustScale();
   }
-  
+
   if (btnLangEn) {
     btnLangEn.addEventListener('click', () => setLanguage('en'));
   }
   if (btnLangAr) {
     btnLangAr.addEventListener('click', () => setLanguage('ar'));
   }
-  
+
   // Load saved language, defaulting to English
   const savedLang = localStorage.getItem('midgo-lang') || 'en';
   setLanguage(savedLang);
@@ -90,14 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   function goToPage(index) {
     if (index < 0 || index >= pages.length) return;
-    
+
     pages[currentPageIndex].classList.remove('active');
     navItems[currentPageIndex].classList.remove('active');
-    
+
     currentPageIndex = index;
     pages[currentPageIndex].classList.add('active');
     navItems[currentPageIndex].classList.add('active');
-    
+
     // Close sidebar drawer on mobile/tablet after navigating
     if (sidebar) {
       sidebar.classList.remove('drawer-open');
@@ -105,31 +105,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drawerOverlay) {
       drawerOverlay.classList.remove('active');
     }
-    
+
     // Scroll to the top of the page on mobile to prevent cut-off headers
     window.scrollTo({ top: 0, behavior: 'instant' });
-    
+
     handlePageEnter(currentPageIndex);
   }
-  
+
   function nextPage() {
     if (currentPageIndex < pages.length - 1) {
       goToPage(currentPageIndex + 1);
     }
   }
-  
+
   function prevPage() {
     if (currentPageIndex > 0) {
       goToPage(currentPageIndex - 1);
     }
   }
-  
+
   navItems.forEach((item, index) => {
     item.addEventListener('click', () => {
       goToPage(index);
     });
   });
-  
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && document.activeElement.tagName !== 'BUTTON' && document.activeElement.tagName !== 'INPUT')) {
       nextPage();
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     }
   });
-  
+
   // Set tabIndex dynamically for pages to prevent tab focus overflow
   pages.forEach(page => {
     page.setAttribute('tabindex', '-1');
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       e.stopPropagation(); // Prevent immediate closing from document listener
     });
-    
+
     // Close drawer when clicking outside
     document.addEventListener('click', (e) => {
       if (sidebar.classList.contains('drawer-open')) {
@@ -193,15 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   function initMobileSimulators() {
     const scopes = ['.lang-en', '.lang-ar'];
-    
+
     scopes.forEach(scope => {
       const parent = document.querySelector(`#page-16 ${scope}`);
       if (!parent) return;
-      
+
       const phoneStates = parent.querySelectorAll('.phone-screen-state');
       const phoneDots = parent.querySelectorAll('.phone-dot');
       const subTabBtns = parent.querySelectorAll('.ui-mobile-sub-btn');
-      
+
       function setPhoneStateScoped(stateIndex) {
         phoneStates.forEach((state, idx) => {
           if (idx === stateIndex) {
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             state.classList.remove('active');
           }
         });
-        
+
         phoneDots.forEach((dot, idx) => {
           if (idx === stateIndex) {
             dot.classList.add('active');
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.classList.remove('active');
           }
         });
-        
+
         subTabBtns.forEach((btn, idx) => {
           if (idx === stateIndex) {
             btn.classList.add('active');
@@ -227,19 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
-      
+
       phoneDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           setPhoneStateScoped(index);
         });
       });
-      
+
       subTabBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
           setPhoneStateScoped(index);
         });
       });
-      
+
       // Auto-rotate the active visible simulator screen
       setInterval(() => {
         // Only auto-rotate if Page 16 is currently active
@@ -279,11 +279,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  
+
   const btnPrint = document.getElementById('btnPrint');
   if (btnPrint) {
     btnPrint.addEventListener('click', () => {
-      window.print();
+      // Pre-print: add class hook for CSS overrides
+      document.documentElement.classList.add('printing');
+
+      // Use setTimeout to let the class apply before print dialog opens
+      setTimeout(() => {
+        window.print();
+
+        // Post-print: clean up the class
+        // Use both 'afterprint' event and a timeout fallback
+        const cleanup = () => {
+          document.documentElement.classList.remove('printing');
+        };
+        window.addEventListener('afterprint', cleanup, { once: true });
+        // Fallback for browsers that don't fire afterprint reliably
+        setTimeout(cleanup, 2000);
+      }, 100);
     });
   }
 
@@ -292,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
   let lottieAnimEn = null;
   let lottieAnimAr = null;
-  
+
   function displayLottieFallback(containerEn, containerAr) {
     const fallbackHTML = `
       <div class="lottie-fallback-svg" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; opacity:0.85; pointer-events:none;">
@@ -306,25 +321,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (containerEn) containerEn.innerHTML = fallbackHTML;
     if (containerAr) containerAr.innerHTML = fallbackHTML;
   }
-  
+
   async function initLottiePlayers() {
     const containerEn = document.getElementById('lottie-player-en');
     const containerAr = document.getElementById('lottie-player-ar');
-    
+
     if (!containerEn && !containerAr) return;
-    
+
     try {
       const response = await fetch('assets/data.json');
       if (!response.ok) {
         throw new Error(`Failed to load assets/data.json: status ${response.status}`);
       }
-      
+
       const animData = await response.json();
-      
+
       if (!animData || typeof animData !== 'object' || !animData.v) {
         throw new Error("Invalid Lottie JSON structure: missing version key 'v'");
       }
-      
+
       if (typeof lottie !== 'undefined') {
         const loadLottie = (container, data) => {
           let anim = null;
@@ -336,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
               autoplay: false,
               animationData: data
             });
-            
+
             anim.addEventListener('error', (err) => {
               console.warn("Lottie SVG animation runtime error, reloading using canvas renderer:", err);
               try {
@@ -369,11 +384,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (containerEn) {
           lottieAnimEn = loadLottie(containerEn, animData);
         }
-        
+
         if (containerAr) {
           lottieAnimAr = loadLottie(containerAr, animData);
         }
-        
+
         bindReplayControls();
       }
     } catch (err) {
@@ -381,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       displayLottieFallback(containerEn, containerAr);
     }
   }
-  
+
   function bindReplayControls() {
     const btnReplayEn = document.getElementById('btn-replay-lottie-en');
     if (btnReplayEn) {
@@ -391,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-    
+
     const btnReplayAr = document.getElementById('btn-replay-lottie-ar');
     if (btnReplayAr) {
       btnReplayAr.addEventListener('click', () => {
@@ -401,21 +416,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-  
+
   initLottiePlayers();
 
   // ----------------------------------------------------
-  // 8. Dynamic Mobile Header Height Calculation
+  // 8. Dynamic Mobile Header Height Measurement
+  // Writes to --header-height so CSS consumes it directly.
+  // This makes the layout truly dynamic: if the header
+  // renders at a different height due to safe-area insets,
+  // the viewport padding adapts automatically.
   // ----------------------------------------------------
   function updateHeaderOffset() {
     if (window.innerWidth < 1280) {
       if (sidebar) {
         const rect = sidebar.getBoundingClientRect();
-        const height = rect.height;
-        document.documentElement.style.setProperty('--header-height-dynamic', `${height}px`);
+        const measuredHeight = rect.height;
+        // Update the CSS variable that controls ALL layout offsets
+        document.documentElement.style.setProperty('--header-height', `${measuredHeight}px`);
       }
     } else {
-      document.documentElement.style.removeProperty('--header-height-dynamic');
+      // On desktop, reset to the default value
+      document.documentElement.style.setProperty('--header-height', '48px');
     }
   }
 

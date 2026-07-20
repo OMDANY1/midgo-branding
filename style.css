@@ -2321,10 +2321,20 @@ html.lang-ar .btn-menu {
   transform: rotate(90deg);
 }
 
-/* Tablet & Mobile Responsive Layer (< 1280px) */
+/* ============================================================ */
+/* Tablet & Mobile Responsive Layer (< 1280px)                  */
+/* SINGLE SOURCE OF TRUTH for mobile layout architecture.       */
+/* All header height references use var(--header-height).       */
+/* The .viewport container handles the fixed-header offset.     */
+/* Individual .brand-page elements only have internal padding.  */
+/* ============================================================ */
 @media (max-width: 1279px) {
+  /* Body becomes the scroll container on mobile */
   body {
     overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    width: 100%;
   }
 
   .app-container {
@@ -2335,13 +2345,16 @@ html.lang-ar .btn-menu {
     overflow: visible;
   }
 
-  /* Transform Sidebar into Sticky Top Bar - Reduced height to 56px with safe-area padding */
+  /* ---------------------------------------------------------- */
+  /* Fixed Header: uses var(--header-height) as single source    */
+  /* ---------------------------------------------------------- */
   .sidebar {
     width: 100%;
-    height: calc(56px + env(safe-area-inset-top, 0px));
+    height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -2374,14 +2387,16 @@ html.lang-ar .btn-menu {
     display: inline-flex;
   }
 
-  /* Sidebar navigation becomes a slide-out drawer - Adjusted top and bottom safe-area insets */
+  /* ---------------------------------------------------------- */
+  /* Navigation Drawer: anchored below the header                */
+  /* ---------------------------------------------------------- */
   .nav-links {
     position: fixed;
-    top: calc(56px + env(safe-area-inset-top, 0px));
-    left: -320px; /* Hidden offscreen by default LTR */
+    top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+    left: -320px;
     width: 300px;
-    height: calc(100vh - 56px - env(safe-area-inset-top, 0px));
-    height: calc(100dvh - 56px - env(safe-area-inset-top, 0px));
+    height: calc(100vh - var(--header-height) - env(safe-area-inset-top, 0px));
+    height: calc(100dvh - var(--header-height) - env(safe-area-inset-top, 0px));
     background: rgba(17, 17, 17, 0.98);
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     flex-direction: column;
@@ -2396,7 +2411,7 @@ html.lang-ar .btn-menu {
 
   html.lang-ar .nav-links {
     left: auto;
-    right: -320px; /* Hidden offscreen RTL */
+    right: -320px;
     border-right: none;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
@@ -2404,7 +2419,6 @@ html.lang-ar .btn-menu {
     padding-right: calc(24px + env(safe-area-inset-right, 0px)) !important;
   }
 
-  /* When drawer is open, shift it into view */
   .sidebar.drawer-open .nav-links {
     transform: translateX(320px);
   }
@@ -2421,22 +2435,26 @@ html.lang-ar .btn-menu {
   }
 
   .btn-print {
-    display: none !important; /* Hide print on mobile/tablet */
+    display: none !important;
   }
 
-  /* Viewport offsets content globally below the fixed mobile header footprint */
+  /* ---------------------------------------------------------- */
+  /* VIEWPORT: The ONLY element that compensates for the fixed   */
+  /* header. padding-top pushes all content below the header.    */
+  /* This is the global solution — pages inherit automatically.  */
+  /* ---------------------------------------------------------- */
   .viewport {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible !important;
     padding: 0 !important;
     padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
     padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     margin: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto;
-    min-height: calc(100vh - calc(var(--header-height) + env(safe-area-inset-top, 0px)));
-    min-height: calc(100dvh - calc(var(--header-height) + env(safe-area-inset-top, 0px)));
-    display: block;
-    overflow: visible;
     box-sizing: border-box !important;
   }
 
@@ -2449,19 +2467,21 @@ html.lang-ar .btn-menu {
     background-color: transparent;
     border-radius: 0;
     overflow: visible;
-    margin: 0 auto;
+    margin: 0;
   }
 
-  /* Responsive Brand Page Layout Flow - Inherits vertical rhythm via simple page paddings */
+  /* ---------------------------------------------------------- */
+  /* BRAND PAGES: Internal padding only. No header compensation. */
+  /* The viewport already pushed us below the header.            */
+  /* ---------------------------------------------------------- */
   .brand-page {
     position: relative;
     display: none;
     opacity: 0;
     visibility: hidden;
     height: auto;
-    min-height: calc(100vh - calc(var(--header-height) + env(safe-area-inset-top, 0px))) !important;
-    min-height: calc(100dvh - calc(var(--header-height) + env(safe-area-inset-top, 0px))) !important;
-    padding: var(--page-top-spacing) calc(20px + env(safe-area-inset-left, 0px)) 32px calc(20px + env(safe-area-inset-right, 0px)) !important;
+    min-height: 0 !important;
+    padding: var(--page-top-spacing) 24px 32px 24px !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
@@ -2560,15 +2580,14 @@ html.lang-ar .btn-menu {
 
 /* Mobile responsive adjustments (< 768px) */
 @media (max-width: 767px) {
-  .viewport {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+  /* DO NOT reset .viewport padding here.
+     The padding-top from the 1279px query is the global header offset.
+     Only override what's specific to narrow screens. */
 
   .brand-page {
-    /* Keep horizontal paddings but respect top variable calculation from parent max-width 1279px */
-    padding-left: calc(20px + env(safe-area-inset-left, 0px)) !important;
-    padding-right: calc(20px + env(safe-area-inset-right, 0px)) !important;
+    /* Tighter horizontal padding on narrow screens */
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   /* Compact Mobile Header Padding & Sizing with safe-area support */
@@ -2873,64 +2892,178 @@ html.lang-ar .btn-menu {
   }
 }
 
-/* ---------------------------------------------------- */
-/* Print Style Sheet Layout for A4 Export */
-/* ---------------------------------------------------- */
+/* ============================================================ */
+/* Print & PDF Export Stylesheet                                 */
+/* Production-quality A4 Landscape export.                       */
+/* ============================================================ */
+
+/* Page dimensions — A4 Landscape with zero margins */
+@page {
+  size: 297mm 210mm;
+  margin: 0;
+}
+
 @media print {
-  body {
-    background: var(--white);
-    color: var(--black);
-    overflow: visible;
-    height: auto;
-    width: auto;
+  /* Force background rendering globally */
+  html {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
-  .sidebar {
+  /* Reset body to auto-flowing document */
+  body {
+    background: white !important;
+    color: var(--black) !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-container {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  /* ---------------------------------------------------------- */
+  /* HIDE ALL INTERACTIVE UI                                     */
+  /* ---------------------------------------------------------- */
+  .sidebar,
+  .drawer-overlay,
+  .btn-icon,
+  .btn-print,
+  .btn-menu,
+  .sidebar-footer,
+  .lang-switch-pill,
+  .phone-state-controls,
+  .ui-selector-sidebar,
+  .ui-mobile-sub-selector,
+  .phone-dot,
+  #btn-fullscreen,
+  .crop-mark {
     display: none !important;
   }
 
+  /* ---------------------------------------------------------- */
+  /* VIEWPORT: Remove all mobile offsets for print               */
+  /* ---------------------------------------------------------- */
   .viewport {
-    padding: 0 !important;
     display: block !important;
+    width: auto !important;
     height: auto !important;
+    min-height: 0 !important;
     overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .book-container {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
     box-shadow: none !important;
     transform: none !important;
-    width: 100% !important;
-    height: auto !important;
-    overflow: visible !important;
     border-radius: 0 !important;
+    background: transparent !important;
   }
 
+  /* ---------------------------------------------------------- */
+  /* BRAND PAGES: Each page = one A4 Landscape sheet             */
+  /* ---------------------------------------------------------- */
   .brand-page {
     position: relative !important;
     display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
     opacity: 1 !important;
     visibility: visible !important;
-    page-break-after: always !important;
+    pointer-events: none !important;
+
+    /* Exact A4 Landscape dimensions */
     width: 297mm !important;
     height: 210mm !important;
-    padding: 20mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    padding: 18mm 22mm !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
+
+    /* Page break control */
+    break-after: page !important;
+    page-break-after: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+
+    /* Default light page */
     background-color: var(--white) !important;
     color: var(--black) !important;
     border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
   }
 
-  .brand-page.theme-dark,
-  .brand-page.theme-charcoal {
+  /* Remove break-after on the last page to avoid trailing blank */
+  .brand-page:last-child {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  /* Preserve dark and charcoal page backgrounds */
+  .brand-page.theme-dark {
     background-color: var(--black) !important;
     color: var(--white) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
 
-  .btn-icon, .btn-print, .phone-state-controls, .ui-selector-sidebar, .ui-mobile-sub-selector {
-    display: none !important;
+  .brand-page.theme-charcoal {
+    background-color: var(--charcoal) !important;
+    color: var(--white) !important;
   }
+
+  .brand-page.theme-light {
+    background-color: var(--light-gray) !important;
+    color: var(--black) !important;
+  }
+
+  /* ---------------------------------------------------------- */
+  /* TYPOGRAPHY: Preserve web fonts                              */
+  /* ---------------------------------------------------------- */
+  h1, h2, h3, h4, p, span, blockquote, td, th, li {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  /* ---------------------------------------------------------- */
+  /* IMAGES: Full quality, no lazy-loading artifacts             */
+  /* ---------------------------------------------------------- */
+  img {
+    max-width: 100% !important;
+    image-rendering: auto !important;
+    break-inside: avoid !important;
+  }
+
+  /* SVGs remain vector — never rasterize */
+  svg {
+    shape-rendering: geometricPrecision !important;
+  }
+
+  /* ---------------------------------------------------------- */
+  /* LAYOUT HELPERS for print                                    */
+  /* ---------------------------------------------------------- */
+  .page-container-flex {
+    height: 100% !important;
+  }
+
+  /* Inline language blocks: show only the active language */
+  /* (Print inherits whichever lang class is on <html>) */
 
   .ui-display-area {
     flex: 1 !important;
@@ -2944,8 +3077,42 @@ html.lang-ar .btn-menu {
     gap: 20px !important;
   }
 
-  .desktop-simulator, .van-mockup, .packaging-box-white, .shopping-bag, .hang-tag {
-    transform: scale(0.8) !important;
+  /* Scale down 3D mockups to fit within print page */
+  .desktop-simulator,
+  .van-mockup,
+  .packaging-box-white,
+  .shopping-bag,
+  .hang-tag {
+    transform: scale(0.75) !important;
+  }
+
+  /* Cover page background decorations */
+  .cover-bg-premium {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .bg-gradient-circle {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Color swatches must render their backgrounds */
+  .color-swatch,
+  .swatch-plum-spec,
+  .swatch-bronze-spec,
+  .swatch-stone-spec,
+  .swatch-cream-spec {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Cards and essence cards preserve borders and shadows */
+  .essence-card,
+  .card,
+  .card-logo-guideline {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 }
 
@@ -3459,9 +3626,9 @@ html.lang-ar .social-post-caption {
 /* ==================================================== */
 
 @media (max-width: 1279px) {
-  /* Sticky Top Bar Header Redesign */
+  /* Sticky Top Bar Header Redesign — height reads from var(--header-height) */
   .sidebar {
-    height: calc(48px + env(safe-area-inset-top, 0px)) !important;
+    height: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
     padding-top: env(safe-area-inset-top, 0px) !important;
     padding-bottom: 0 !important;
     padding-left: calc(16px + env(safe-area-inset-left, 0px)) !important;
@@ -3548,12 +3715,12 @@ html.lang-ar .social-post-caption {
     display: none !important; /* Hide fullscreen trigger on tablets/phones */
   }
 
-  /* Navigation Drawer Layout & Safe Area */
+  /* Navigation Drawer Layout — anchored below header via var(--header-height) */
   .nav-links {
     position: fixed !important;
-    top: calc(48px + env(safe-area-inset-top, 0px)) !important;
-    height: calc(100vh - 48px - env(safe-area-inset-top, 0px)) !important;
-    height: calc(100dvh - 48px - env(safe-area-inset-top, 0px)) !important;
+    top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
+    height: calc(100vh - var(--header-height) - env(safe-area-inset-top, 0px)) !important;
+    height: calc(100dvh - var(--header-height) - env(safe-area-inset-top, 0px)) !important;
     background: var(--black) !important;
     border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
     padding: 20px !important;
@@ -3589,15 +3756,9 @@ html.lang-ar .social-post-caption {
     margin-bottom: 2px !important;
   }
 
-  /* Mobile viewport safe area offsets for full-width layout */
-  .viewport {
-    padding: 0 !important;
-    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
-    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
-    margin: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
+  /* .viewport padding-top is handled by the SINGLE SOURCE OF TRUTH
+     in the first @media (max-width: 1279px) block above.
+     DO NOT redeclare it here. */
 
   /* Ebook grid overlap layout collapse for tablet & mobile */
   .ebook-grid-overlap {
@@ -3766,11 +3927,7 @@ html.lang-ar .social-post-caption {
 }
 
 @media (max-width: 480px) {
-  /* Keep viewport padding reset to zero but maintain header top offset */
-  .viewport {
-    padding: 0 !important;
-    padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px)) !important;
-  }
+  /* .viewport padding-top inherited from 1279px query — DO NOT redeclare */
 
   .page-section-title {
     font-size: 1.5rem !important; /* 24px */
