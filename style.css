@@ -20,6 +20,10 @@
   --page-width: 1414px;  /* A4 Landscape Ratio (approx 1.414) */
   --page-height: 1000px;
   --grid-gap: 32px;
+
+  /* Mobile Layout Constants */
+  --mobile-header-height: 48px;
+  --page-top-spacing: 32px;
 }
 
 /* Bilingual Display Layout Rules */
@@ -2420,21 +2424,20 @@ html.lang-ar .btn-menu {
     display: none !important; /* Hide print on mobile/tablet */
   }
 
-  /* Viewport and Book Container adjustments - Adjusted top spacing */
+  /* Viewport and Book Container adjustments - Reset for edge-to-edge mobile overlays */
   .viewport {
-    padding: 24px;
-    padding-top: calc(var(--header-height-dynamic, 56px) + env(safe-area-inset-top, 0px)) !important;
-    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto;
-    min-height: calc(100vh - calc(56px + env(safe-area-inset-top, 0px)));
-    min-height: calc(100dvh - calc(56px + env(safe-area-inset-top, 0px)));
     display: block;
     overflow: visible;
   }
 
   .book-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     height: auto;
     min-height: auto;
     box-shadow: none;
@@ -2444,17 +2447,18 @@ html.lang-ar .btn-menu {
     margin: 0 auto;
   }
 
-  /* Responsive Brand Page Layout Flow */
+  /* Responsive Brand Page Layout Flow - Offset content top mathematically */
   .brand-page {
     position: relative;
     display: none;
     opacity: 0;
     visibility: hidden;
     height: auto;
-    min-height: 100%;
-    padding: 40px 32px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: calc(var(--mobile-header-height) + var(--page-top-spacing) + env(safe-area-inset-top, 0px)) calc(20px + env(safe-area-inset-left, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) calc(20px + env(safe-area-inset-right, 0px)) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
   .brand-page.active {
@@ -2551,15 +2555,14 @@ html.lang-ar .btn-menu {
 /* Mobile responsive adjustments (< 768px) */
 @media (max-width: 767px) {
   .viewport {
-    padding: 16px 12px;
-    padding-top: calc(var(--header-height-dynamic, 56px) + env(safe-area-inset-top, 0px)) !important;
-    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .brand-page {
-    padding: 24px 16px;
-    padding-left: calc(16px + env(safe-area-inset-left, 0px)) !important;
-    padding-right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+    /* Keep horizontal paddings but respect top variable calculation from parent max-width 1279px */
+    padding-left: calc(20px + env(safe-area-inset-left, 0px)) !important;
+    padding-right: calc(20px + env(safe-area-inset-right, 0px)) !important;
   }
 
   /* Compact Mobile Header Padding & Sizing with safe-area support */
@@ -3580,11 +3583,12 @@ html.lang-ar .social-post-caption {
     margin-bottom: 2px !important;
   }
 
-  /* Mobile viewport safe area paddings */
+  /* Mobile viewport safe area resets for full-width layout */
   .viewport {
-    padding: 24px 20px !important;
-    padding-top: calc(48px + 32px + env(safe-area-inset-top, 0px)) !important;
-    padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* Ebook grid overlap layout collapse for tablet & mobile */
@@ -3754,10 +3758,9 @@ html.lang-ar .social-post-caption {
 }
 
 @media (max-width: 480px) {
-  /* Extra styling refinements for smaller phone screens (360px - 430px) */
+  /* Keep viewport padding reset to zero to avoid overlaps */
   .viewport {
-    padding: 20px 16px !important;
-    padding-top: calc(48px + 24px + env(safe-area-inset-top, 0px)) !important;
+    padding: 0 !important;
   }
 
   .page-section-title {
@@ -3855,7 +3858,7 @@ html.lang-ar .social-post-caption {
     min-height: calc(100vh - 100px) !important;
     padding: 32px 16px !important;
   }
-  
+
   .cover-header {
     flex-direction: column !important;
     align-items: center !important;
@@ -3863,18 +3866,18 @@ html.lang-ar .social-post-caption {
     width: 100% !important;
     text-align: center !important;
   }
-  
+
   .cover-header img {
     height: 20px !important;
     width: auto !important;
     max-width: 120px !important;
   }
-  
+
   .cover-date {
     font-size: 0.7rem !important;
     letter-spacing: 1px !important;
   }
-  
+
   .cover-text-glass {
     width: 100% !important;
     max-width: 340px !important;
@@ -3885,25 +3888,25 @@ html.lang-ar .social-post-caption {
     box-shadow: 0 15px 35px -10px rgba(74, 53, 72, 0.08) !important;
     border: 1px solid rgba(74, 53, 72, 0.05) !important;
   }
-  
+
   .cover-title {
     font-size: 2rem !important;
     line-height: 1.15 !important;
     margin-bottom: 12px !important;
     text-align: center !important;
   }
-  
+
   .cover-title span {
     display: block !important; /* Stack "GUIDELINES" underneath for intentional wrapping */
   }
-  
+
   .cover-subtitle {
     font-size: 1rem !important;
     line-height: 1.45 !important;
     text-align: center !important;
     margin: 0 !important;
   }
-  
+
   .cover-footer {
     flex-direction: column !important;
     align-items: center !important;
