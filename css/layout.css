@@ -1,0 +1,147 @@
+/* MIDGO Swiss Grid & Layout System */
+
+/* Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  max-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+}
+
+/* Swiss Grid Base (12 columns on desktop) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Grid Spans for Responsive layouts */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; }
+.col-span-8 { grid-column: span 8; }
+.col-span-9 { grid-column: span 9; }
+.col-span-10 { grid-column: span 10; }
+.col-span-11 { grid-column: span 11; }
+.col-span-12 { grid-column: span 12; }
+
+@media (max-width: 1024px) {
+  .tablet-col-span-1 { grid-column: span 1; }
+  .tablet-col-span-2 { grid-column: span 2; }
+  .tablet-col-span-3 { grid-column: span 3; }
+  .tablet-col-span-4 { grid-column: span 4; }
+  .tablet-col-span-5 { grid-column: span 5; }
+  .tablet-col-span-6 { grid-column: span 6; }
+  .tablet-col-span-7 { grid-column: span 7; }
+  .tablet-col-span-8 { grid-column: span 8; }
+}
+
+@media (max-width: 767px) {
+  .mobile-col-span-1 { grid-column: span 1; }
+  .mobile-col-span-2 { grid-column: span 2; }
+  .mobile-col-span-3 { grid-column: span 3; }
+  .mobile-col-span-4 { grid-column: span 4; }
+}
+
+/* Flexbox Layout Helpers */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-wrap { flex-wrap: wrap; }
+
+.gap-xxs { gap: var(--space-xxs); }
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+.gap-2xl { gap: var(--space-2xl); }
+
+/* Editorial Spacing Classes with CSS logical properties */
+.padding-block-xs { padding-block: var(--space-xs); }
+.padding-block-sm { padding-block: var(--space-sm); }
+.padding-block-md { padding-block: var(--space-md); }
+.padding-block-lg { padding-block: var(--space-lg); }
+.padding-block-xl { padding-block: var(--space-xl); }
+.padding-block-2xl { padding-block: var(--space-2xl); }
+.padding-block-3xl { padding-block: var(--space-3xl); }
+.padding-block-4xl { padding-block: var(--space-4xl); }
+.padding-block-5xl { padding-block: var(--space-5xl); }
+
+.margin-block-xs { margin-block: var(--space-xs); }
+.margin-block-sm { margin-block: var(--space-sm); }
+.margin-block-md { margin-block: var(--space-md); }
+.margin-block-lg { margin-block: var(--space-lg); }
+.margin-block-xl { margin-block: var(--space-xl); }
+.margin-block-2xl { margin-block: var(--space-2xl); }
+
+/* Aspect Ratio Utilities */
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-portrait { aspect-ratio: 3 / 4; }
+
+/* Grid overlay for demonstration */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  display: grid;
+  padding-left: var(--space-2xl);
+  padding-right: var(--space-2xl);
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.grid-overlay.active {
+  opacity: 0.15;
+}
+
+.grid-overlay-col {
+  background-color: var(--bronze);
+  height: 100%;
+}

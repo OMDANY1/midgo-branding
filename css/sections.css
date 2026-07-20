@@ -1,0 +1,671 @@
+/* MIDGO Section-Specific Styles */
+
+/* Base Section Styling */
+.section {
+  padding-block: var(--space-4xl);
+  border-bottom: 1px solid rgba(74, 53, 72, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-6xl);
+  }
+}
+
+.section-title-wrapper {
+  margin-bottom: var(--space-3xl);
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--bronze);
+  display: block;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  color: var(--plum);
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  color: var(--plum-light);
+  max-width: 600px;
+}
+
+/* ==========================================
+   SECTION 01: Hero
+   ========================================== */
+.hero-section {
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--cream);
+  padding-top: 80px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  z-index: 5;
+}
+
+.hero-logo-container {
+  height: 140px;
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-logo-img {
+  max-height: 120px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: heroLogoReveal 1.6s var(--ease-premium) forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  color: var(--plum);
+  margin-bottom: var(--space-xl);
+  line-height: var(--lh-tight);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s var(--ease-premium) forwards;
+  animation-delay: 1.2s;
+}
+
+@media (min-width: 768px) {
+  .hero-tagline {
+    font-size: var(--text-5xl);
+  }
+}
+
+.hero-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--plum-light);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  opacity: 0;
+  animation: fadeIn 1.5s var(--ease-premium) forwards;
+  animation-delay: 1.8s;
+}
+
+/* Background grid animation */
+.hero-bg-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: 
+    linear-gradient(to right, var(--plum) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--plum) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--space-2xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeIn 1.5s var(--ease-premium) forwards;
+  animation-delay: 2.2s;
+}
+
+.scroll-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--plum-light);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: var(--plum-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bronze);
+  animation: scrollDot 2s infinite var(--ease-premium);
+}
+
+/* ==========================================
+   SECTION 02: About MIDGO
+   ========================================== */
+.about-grid-card {
+  padding: var(--space-2xl);
+  height: 100%;
+}
+
+.about-quote {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  line-height: var(--lh-tight);
+  color: var(--plum);
+  position: relative;
+  border-left: 2px solid var(--bronze);
+  padding-left: var(--space-xl);
+  margin-block: var(--space-xl);
+}
+
+[dir="rtl"] .about-quote {
+  border-left: none;
+  border-right: 2px solid var(--bronze);
+  padding-left: 0;
+  padding-right: var(--space-xl);
+}
+
+/* ==========================================
+   SECTION 03: Brand Positioning
+   ========================================== */
+.positioning-card {
+  border-top: 3px solid var(--bronze);
+}
+
+.pain-point-item {
+  border-bottom: var(--border-light);
+  padding-block: var(--space-lg);
+  cursor: pointer;
+}
+
+.pain-point-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pain-point-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+  color: var(--plum-light);
+  padding-top: 0;
+}
+
+.pain-point-item.active .pain-point-content {
+  max-height: 200px;
+  padding-top: var(--space-md);
+}
+
+.pain-point-icon {
+  transition: transform var(--transition-normal);
+}
+
+.pain-point-item.active .pain-point-icon {
+  transform: rotate(45deg);
+}
+
+/* ==========================================
+   SECTION 04: Brand Personality
+   ========================================== */
+.personality-card {
+  min-height: 380px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.personality-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-4xl);
+  color: rgba(201, 168, 140, 0.15);
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  line-height: 1;
+}
+
+[dir="rtl"] .personality-num {
+  right: auto;
+  left: var(--space-lg);
+}
+
+.personality-header {
+  margin-bottom: var(--space-md);
+}
+
+.personality-title {
+  font-size: var(--text-2xl);
+  color: var(--plum);
+  margin-bottom: var(--space-xs);
+}
+
+.personality-percentage {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--bronze);
+  font-weight: 700;
+  display: block;
+}
+
+.personality-bar-container {
+  height: 2px;
+  background-color: var(--stone-light);
+  width: 100%;
+  margin-top: var(--space-xs);
+  overflow: hidden;
+}
+
+.personality-bar {
+  height: 100%;
+  background-color: var(--plum);
+  width: 0;
+  transition: width 1.5s var(--ease-premium);
+}
+
+/* ==========================================
+   SECTION 05: Logo Meaning
+   ========================================== */
+.logo-meaning-showcase {
+  background-color: var(--white);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.logo-showcase-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  transition: transform var(--transition-normal);
+}
+
+.logo-meaning-grid {
+  margin-top: var(--space-3xl);
+  width: 100%;
+}
+
+.logo-point-card {
+  border-left: 2px solid var(--stone);
+  padding-left: var(--space-lg);
+  transition: border-color var(--transition-fast);
+}
+
+.logo-point-card:hover {
+  border-color: var(--bronze);
+}
+
+[dir="rtl"] .logo-point-card {
+  border-left: none;
+  border-right: 2px solid var(--stone);
+  padding-left: 0;
+  padding-right: var(--space-lg);
+}
+
+[dir="rtl"] .logo-point-card:hover {
+  border-color: var(--bronze);
+}
+
+/* ==========================================
+   SECTION 06: Color System
+   ========================================== */
+.color-contrast-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: var(--border-light);
+}
+
+/* ==========================================
+   SECTION 07: Typography System
+   ========================================== */
+.type-specimen {
+  padding: var(--space-2xl);
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.type-specimen-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--stone-light);
+  padding-bottom: var(--space-md);
+}
+
+.type-specimen-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--plum-light);
+}
+
+/* ==========================================
+   SECTION 08: Spacing System
+   ========================================== */
+.spacing-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.spacing-block-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.spacing-block-visual {
+  height: 24px;
+  background-color: var(--bronze);
+  border-radius: var(--radius-sm);
+  min-width: 10px;
+}
+
+/* ==========================================
+   SECTION 10: Iconography
+   ========================================== */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-lg);
+}
+
+.icon-card {
+  background-color: var(--white);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  transition: all var(--transition-fast);
+}
+
+.icon-card:hover {
+  border-color: var(--bronze);
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-svg {
+  stroke: var(--plum);
+  fill: none;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================
+   SECTION 11: Photography Direction
+   ========================================== */
+.photo-moodboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.photo-mood-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--stone);
+}
+
+.photo-mood-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.photo-mood-item:hover img {
+  transform: scale(1.05);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-lg);
+  background: linear-gradient(to top, rgba(74, 53, 72, 0.8) 0%, rgba(74, 53, 72, 0) 100%);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+}
+
+/* ==========================================
+   SECTION 13: Social Media System
+   ========================================== */
+.social-preview-grid {
+  display: flex;
+  gap: var(--space-xl);
+  overflow-x: auto;
+  padding-bottom: var(--space-lg);
+}
+
+.instagram-post {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--white);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.instagram-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-bottom: var(--border-light);
+}
+
+.instagram-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background-color: var(--stone);
+  overflow: hidden;
+}
+
+.instagram-username {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.instagram-image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  position: relative;
+  background-color: var(--cream);
+  overflow: hidden;
+}
+
+.instagram-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram-overlay-text {
+  position: absolute;
+  inset: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instagram-footer {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.instagram-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xxs);
+}
+
+.instagram-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--plum);
+}
+
+.instagram-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: var(--lh-body);
+  color: var(--charcoal);
+}
+
+/* ==========================================
+   SECTION 18: Brand Motion
+   ========================================== */
+.motion-demo-box {
+  width: 100%;
+  height: 200px;
+  background-color: var(--white);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.motion-object {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--plum);
+  transition: transform 0.8s var(--ease-premium), background-color 0.8s var(--ease-premium);
+}
+
+.motion-demo-box:hover .motion-object {
+  transform: scale(1.5) rotate(45deg);
+  background-color: var(--bronze);
+}
+
+/* ==========================================
+   Keyframes & Animations
+   ========================================== */
+@keyframes heroLogoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translateY(-100%);
+  }
+  80% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Scroll Triggered reveal styling */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-premium), transform 1.2s var(--ease-premium);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staggered-reveal > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease-premium), transform 1s var(--ease-premium);
+}
+
+.staggered-reveal.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staggered-reveal.revealed > *:nth-child(1) { transition-delay: 0.1s; }
+.staggered-reveal.revealed > *:nth-child(2) { transition-delay: 0.2s; }
+.staggered-reveal.revealed > *:nth-child(3) { transition-delay: 0.3s; }
+.staggered-reveal.revealed > *:nth-child(4) { transition-delay: 0.4s; }
+.staggered-reveal.revealed > *:nth-child(5) { transition-delay: 0.5s; }
+.staggered-reveal.revealed > *:nth-child(6) { transition-delay: 0.6s; }
