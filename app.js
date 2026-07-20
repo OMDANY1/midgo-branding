@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewport = document.querySelector('.viewport');
   const sidebar = document.querySelector('.sidebar');
   const btnMenuToggle = document.getElementById('btn-menu-toggle');
+  const drawerOverlay = document.getElementById('drawer-overlay');
   
   let currentPageIndex = 0;
   
@@ -101,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sidebar) {
       sidebar.classList.remove('drawer-open');
     }
+    if (drawerOverlay) {
+      drawerOverlay.classList.remove('active');
+    }
     
     // Scroll to the top of the page on mobile to prevent cut-off headers
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -158,6 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnMenuToggle && sidebar) {
     btnMenuToggle.addEventListener('click', (e) => {
       sidebar.classList.toggle('drawer-open');
+      if (drawerOverlay) {
+        drawerOverlay.classList.toggle('active');
+      }
       e.stopPropagation(); // Prevent immediate closing from document listener
     });
     
@@ -166,9 +173,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (sidebar.classList.contains('drawer-open')) {
         if (!sidebar.contains(e.target)) {
           sidebar.classList.remove('drawer-open');
+          if (drawerOverlay) {
+            drawerOverlay.classList.remove('active');
+          }
         }
       }
     });
+
+    if (drawerOverlay) {
+      drawerOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('drawer-open');
+        drawerOverlay.classList.remove('active');
+      });
+    }
   }
 
   // ----------------------------------------------------
